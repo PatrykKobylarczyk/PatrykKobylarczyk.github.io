@@ -1,0 +1,21 @@
+.buttonSettings{
+    height: 40px;
+    width: 40px;
+    border-radius: 10px;
+    margin: 4px;
+    border: none;
+    
+    box-shadow:inset 0 -2px 2px 1px rgba(0, 0, 0, 0.3);
+    display: grid;
+    place-items: center;
+    transition: all .15s ease-in;
+}
+
+.buttonSettings:hover {
+    transform: translateY(-5px) scale(1.15);
+    cursor: pointer;
+}
+
+li{
+    list-style: none;
+}

@@ -1,0 +1,19 @@
+.toggleDate{
+    position: absolute;
+    top: 50%;
+    right: 5%;
+    transform: translateY(-50%);
+
+    width: 70px;
+    height: 70px;
+    background: rgb(1, 88, 88);
+    border-radius: 50%;
+    font-family: Montserrat;
+    font-weight: 500;
+    font-size: .7rem;
+    color: white;
+}
+
+.toggleDate:hover{
+    cursor: pointer;
+}
