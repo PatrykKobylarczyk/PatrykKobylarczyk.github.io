@@ -6,21 +6,29 @@ import { OpenAppContext } from '../context/OpenAppContext'
 
 import NavigationPanel from './NavigationPanel'
 import ButtonToggleDate from './Date/ButtonToggleDate';
-import BasicAppWindow from './Apps/BasicAppWindow/BasicAppWindow';
+import OpenedAppList from './Apps/BasicAppWindow/OpenedAppList'
 
 const App = () => {
   const [isDateVisible, setIsDateVisible] = useState(true)
 
-  const [isFilesOpened, setIsFilesOpened] = useState(false)
-  const [isMailOpened, setIsMailOpened] = useState(false)
-  const [isSettingsOpened, setIsSettingsOpened] = useState(false)
-  const [isGamesOpened, setIsGamesOpened] = useState(false)
+  const [isFilesOpened, setIsFilesOpened] = useState()
+  const [isMailOpened, setIsMailOpened] = useState()
+  const [isSettingsOpened, setIsSettingsOpened] = useState()
+  const [isGamesOpened, setIsGamesOpened] = useState()
+  const [filesBtnId, setFilesBtnId] = useState()
+  const [mailBtnId, setMailBtnId] = useState()
+  const [settingsBtnId, setSettingsBtnId] = useState()
+  const [gamesBtnId, setGamesBtnId] = useState()
 
   const openAppContextValue = {
     isFilesOpened, setIsFilesOpened,
+    filesBtnId, setFilesBtnId,
     isMailOpened, setIsMailOpened,
+    mailBtnId, setMailBtnId, 
     isSettingsOpened, setIsSettingsOpened,
-    isGamesOpened, setIsGamesOpened
+    settingsBtnId, setSettingsBtnId, 
+    isGamesOpened, setIsGamesOpened, 
+    gamesBtnId, setGamesBtnId
 }
 
   return (
@@ -29,7 +37,7 @@ const App = () => {
         <DateContext.Provider value={{ isDateVisible, setIsDateVisible }}>
           <NavigationPanel />
           <ButtonToggleDate />
-          {isFilesOpened && <BasicAppWindow />}
+          <OpenedAppList/>
         </DateContext.Provider>
       </OpenAppContext.Provider>
     </div>

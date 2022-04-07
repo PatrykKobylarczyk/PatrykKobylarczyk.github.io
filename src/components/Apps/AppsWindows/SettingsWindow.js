@@ -1,13 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import '../BasicAppWindow/BasicAppWindow.css'
 
-const SettingsWindow = () => {
-    return ( 
-        <div className='appWindow'>
-            <h2>Settings</h2>
-        </div>
-     );
+import { FullScreenContext } from '../../../context/FullScreenContext';
+
+import TabsPanel from '../BasicAppWindow/TabsPanel';
+
+const SettingsWindow = (props) => {
+
+    const [isFullScreen, setIsFullScreen] = useState(false)
+    const [animationClass, setAnimationClass] = useState('')
+
+    return (
+        <FullScreenContext.Provider value={{ isFullScreen, setIsFullScreen, animationClass, setAnimationClass }}>
+            <div className={`basicAppWindow ${animationClass}`} >
+                <TabsPanel id={props.id}/>
+                <h1>Settings window</h1>
+            </div>
+        </FullScreenContext.Provider>
+    );
 }
- 
+
 export default SettingsWindow;

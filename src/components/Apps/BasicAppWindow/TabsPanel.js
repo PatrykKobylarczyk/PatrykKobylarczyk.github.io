@@ -5,11 +5,11 @@ import './TabsPanel.css'
 import TabsPanelAppData from './TabsPanelAppData'
 import TabsPanelButtons from './TabsPanelButtons'
 
-const TabsPanel = () => {
+const TabsPanel = (props) => {
     return ( 
         <div className='tabsPanel'>
-            <TabsPanelAppData/>
-            <TabsPanelButtons/>
+            <TabsPanelAppData id={props.id}/>
+            <TabsPanelButtons id={props.id}/>
         </div>
      );
 }

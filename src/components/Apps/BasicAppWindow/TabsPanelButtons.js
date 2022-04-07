@@ -6,13 +6,13 @@ import MinimizeBtn from './TabsPanelButtons/MinimizeBtn';
 import MaximizeBtn from './TabsPanelButtons/MaximizeBtn';
 import CloseBtn from './TabsPanelButtons/CloseBtn';
 
-const TabsPanelButtons = () => {
+const TabsPanelButtons = (props) => {
 
     return (
         <div className='tabsPanelButtons'>
             <MinimizeBtn />
             <MaximizeBtn />
-            <CloseBtn />
+            <CloseBtn id={props.id}/>
         </div>
     );
 }

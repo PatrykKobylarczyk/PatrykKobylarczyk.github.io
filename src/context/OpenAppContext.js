@@ -1,7 +1,7 @@
 import { createContext } from 'react';
 
 export const OpenAppContext = createContext({
-    isFilesOpened: false,
+    isFilesOpened: true,
     setIsFilesOpened: () => { },
     filesBtnId: '',
     setFilesBtnId: () => { },
@@ -16,7 +16,7 @@ export const OpenAppContext = createContext({
     settingsBtnId: '',
     setSettingsBtnId: () => { },
 
-    isGamesOpened: false,
+    isGamesOpened: true,
     setIsGamesOpened: () => { },
     gamesBtnId: '',
     setGamesBtnId: () => { },

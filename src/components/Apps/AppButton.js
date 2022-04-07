@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useContext, useState } from 'react';
 
 import './ButtonSettings.css'
 
@@ -9,11 +9,14 @@ import { OpenAppContext } from '../../context/OpenAppContext';
 const AppButton = (props) => {
 
     const { setHover } = useContext(HoverButtonsContext)
-    const { setIsFilesOpened, setFilesBtnId, filesBtnId,
-        setIsMailOpened, setMailBtnId, mailBtnId,
-        setIsSettingsOpened, setSettingsBtnId,settingsBtnId,
-        setIsGamesOpened, setGamesBtnId, gamesBtnId } = useContext(OpenAppContext)
-    const [background, setBackground] = useState(props.background)
+    const {
+        setIsFilesOpened, setFilesBtnId,
+        setIsMailOpened, setMailBtnId,
+        setIsSettingsOpened, setSettingsBtnId,
+        setIsGamesOpened, setGamesBtnId
+    } = useContext(OpenAppContext);
+
+    const [background, setBackground] = useState(props.background);
 
     const openAppHandler = (id) => {
         switch (id) {
@@ -37,13 +40,6 @@ const AppButton = (props) => {
                 console.log('Ups');
         }
     }
-
-    useEffect(()=> {
-        console.log(filesBtnId);
-        console.log(mailBtnId);
-        console.log(gamesBtnId);
-        console.log(settingsBtnId);
-    },[filesBtnId, mailBtnId, gamesBtnId, settingsBtnId])
 
     const enterCurrentAppHandler = (id) => {
         setHover(true)
