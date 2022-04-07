@@ -7,15 +7,11 @@ import { HoverButtonsContext } from '../context/OpenAppContext'
 
 const AppProviders = () => {
     return (
-        <OpenAppContext.Provider value={openAppContextValue}>
-            <DateContext.Provider value={{ isDateVisible, setIsDateVisible }}>
-                <FullScreenContext.Provider value={{ isFullScreen, setIsFullScreen, animationClass, setAnimationClass }}>
-                    <HoverButtonsContext.Provider value={{ hover, setHover }}>
-                        {children}
-                    </HoverButtonsContext.Provider>
-                </FullScreenContext.Provider>
-            </DateContext.Provider>
-        </OpenAppContext.Provider>
+        <FullScreenContext.Provider value={{ isFullScreen, setIsFullScreen, animationClass, setAnimationClass }}>
+            <HoverButtonsContext.Provider value={{ hover, setHover }}>
+                {children}
+            </HoverButtonsContext.Provider>
+        </FullScreenContext.Provider>
     );
 }
 
