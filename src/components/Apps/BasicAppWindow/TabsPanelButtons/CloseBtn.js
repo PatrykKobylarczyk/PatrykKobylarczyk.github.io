@@ -10,7 +10,9 @@ const CloseBtn = (props) => {
         setIsFilesOpened, filesBtnId,
         setIsMailOpened, mailBtnId,
         setIsSettingsOpened, settingsBtnId,
-        setIsGamesOpened, gamesBtnId
+        setIsGamesOpened, gamesBtnId,
+        openedAppOrder,
+        setOpenedAppOrder
     } = useContext(OpenAppContext)
 
     const [isCloseHover, setIsCloseHover] = useState(false)
@@ -39,6 +41,11 @@ const CloseBtn = (props) => {
             default:
                 console.log('Ups');
         }
+
+        setOpenedAppOrder((prev) => {
+            const openedapps = prev.filter(app => app !== id)
+            return openedapps
+        })
     }
 
     return (

@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext} from 'react';
 
 import { OpenAppContext } from '../../../context/OpenAppContext'
 
@@ -13,7 +13,7 @@ const OpenedAppList = () => {
         isFilesOpened, filesBtnId,
         isMailOpened, mailBtnId,
         isSettingsOpened, settingsBtnId,
-        isGamesOpened, gamesBtnId
+        isGamesOpened, gamesBtnId,
     } = useContext(OpenAppContext)
 
     const appList = [
@@ -39,7 +39,10 @@ const OpenedAppList = () => {
         }
     ];
 
+  
+
     const openedAppListFilter = appList.filter(app => app.status ? app : null)
+
     const openedAppList = openedAppListFilter.map(app => <li key={app.id}>{app.component}</li>)
 
     return (

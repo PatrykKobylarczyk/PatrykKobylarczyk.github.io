@@ -13,7 +13,7 @@ const MailWindow = (props) => {
 
     return (
         <FullScreenContext.Provider value={{ isFullScreen, setIsFullScreen, animationClass, setAnimationClass }}>
-            <div className={`basicAppWindow ${animationClass}`} >
+            <div className={`basicAppWindow mail${animationClass}`} >
                 <TabsPanel id={props.id}/>
                 <h1>Mail window</h1>
             </div>

@@ -19,6 +19,7 @@ const App = () => {
   const [mailBtnId, setMailBtnId] = useState()
   const [settingsBtnId, setSettingsBtnId] = useState()
   const [gamesBtnId, setGamesBtnId] = useState()
+  const [openedAppOrder, setOpenedAppOrder] = useState([])
 
   const openAppContextValue = {
     isFilesOpened, setIsFilesOpened,
@@ -28,8 +29,11 @@ const App = () => {
     isSettingsOpened, setIsSettingsOpened,
     settingsBtnId, setSettingsBtnId, 
     isGamesOpened, setIsGamesOpened, 
-    gamesBtnId, setGamesBtnId
+    gamesBtnId, setGamesBtnId,
+    openedAppOrder, setOpenedAppOrder
 }
+
+console.log(openedAppOrder);
 
   return (
     <div className="App">

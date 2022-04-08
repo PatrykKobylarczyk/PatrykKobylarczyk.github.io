@@ -13,7 +13,7 @@ const SettingsWindow = (props) => {
 
     return (
         <FullScreenContext.Provider value={{ isFullScreen, setIsFullScreen, animationClass, setAnimationClass }}>
-            <div className={`basicAppWindow ${animationClass}`} >
+            <div className={`basicAppWindow settings${animationClass}`} >
                 <TabsPanel id={props.id}/>
                 <h1>Settings window</h1>
             </div>

@@ -13,7 +13,8 @@ const AppButton = (props) => {
         setIsFilesOpened, setFilesBtnId,
         setIsMailOpened, setMailBtnId,
         setIsSettingsOpened, setSettingsBtnId,
-        setIsGamesOpened, setGamesBtnId
+        setIsGamesOpened, setGamesBtnId,
+        setOpenedAppOrder
     } = useContext(OpenAppContext);
 
     const [background, setBackground] = useState(props.background);
@@ -22,7 +23,7 @@ const AppButton = (props) => {
         switch (id) {
             case 1:
                 setIsFilesOpened(prevState => !prevState);
-                setFilesBtnId(id)
+                setFilesBtnId(id);
                 break;
             case 2:
                 setIsMailOpened(prevState => !prevState);
@@ -39,7 +40,15 @@ const AppButton = (props) => {
             default:
                 console.log('Ups');
         }
+
+        setOpenedAppOrder(
+            (prev) => {
+                if (!prev.includes(id)) 
+                { return [...prev, id] }
+                else {return [...prev]}
+            })
     }
+
 
     const enterCurrentAppHandler = (id) => {
         setHover(true)
