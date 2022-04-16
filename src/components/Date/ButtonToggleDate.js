@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { DateContext } from '../../context/DateContext';
 
-import './ButtonToggleDate.css'
+import '../../styles/ButtonToggleDate.css'
 
 
 const ButtonToggleDate = () => {

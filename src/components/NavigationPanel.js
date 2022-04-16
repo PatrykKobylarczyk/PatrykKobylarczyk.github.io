@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './NavigationPanel.css'
+import '../styles/NavigationPanel.css'
 import AppPanel from './Apps/AppPanel'
 import Date from './Date/Date'
 

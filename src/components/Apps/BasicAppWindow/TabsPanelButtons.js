@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './TabsPanelButtons.css'
+import '../../../styles/TabsPanelButtons.css'
 
 import MinimizeBtn from './TabsPanelButtons/MinimizeBtn';
 import MaximizeBtn from './TabsPanelButtons/MaximizeBtn';

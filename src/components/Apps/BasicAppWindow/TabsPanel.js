@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './TabsPanel.css'
+import '../../../styles/TabsPanel.css'
 
 import TabsPanelAppData from './TabsPanelAppData'
 import TabsPanelButtons from './TabsPanelButtons'
