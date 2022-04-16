@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react';
 
-import './PanelButtons.css';
+import '../../../../styles/PanelButtons.scss';
 
 import { FullScreenContext } from '../../../../context/FullScreenContext';
 

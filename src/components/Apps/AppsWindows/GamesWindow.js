@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import '../../../styles/BasicAppWindow.css'
+import '../../../styles/BasicAppWindow.scss'
 
 import { FullScreenContext } from '../../../context/FullScreenContext';
 

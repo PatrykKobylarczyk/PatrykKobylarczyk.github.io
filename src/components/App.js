@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import '../styles/App.css';
+import '../styles/App.scss';
 import { DateContext } from '../context/DateContext'
 import { OpenAppContext } from '../context/OpenAppContext'
 

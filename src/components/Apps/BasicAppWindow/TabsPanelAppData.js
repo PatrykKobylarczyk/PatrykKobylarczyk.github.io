@@ -1,6 +1,6 @@
 import React from 'react';
 
-import '../../../styles/TabsPanelAppData.css'
+import '../../../styles/TabsPanelAppData.scss'
 import { AppsData } from '../../../data/AppsData'
 import { IconContext } from "react-icons";
 

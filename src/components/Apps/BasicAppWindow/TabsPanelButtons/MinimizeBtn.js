@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import './PanelButtons.css';
+import '../../../../styles/PanelButtons.scss';
 
 const MinimizeBtn = () => {
 

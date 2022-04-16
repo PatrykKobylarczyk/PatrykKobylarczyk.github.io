@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 
-import '../../styles/Date.css'
+import '../../styles/Date.scss'
 import { DateContext } from '../../context/DateContext';
 import moment from 'moment';
 

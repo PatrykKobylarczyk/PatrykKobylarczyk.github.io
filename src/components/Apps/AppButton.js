@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 
-import '../../styles/ButtonSettings.css'
+import '../../styles/ButtonSettings.scss'
 
 import { HoverButtonsContext } from '../../context/HoverButtonsContext';
 import { OpenAppContext } from '../../context/OpenAppContext';

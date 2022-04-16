@@ -1,7 +1,7 @@
 import React from 'react';
 
-import '../../styles/AppPanel.css'
-import '../../styles/ButtonSettings.css'
+import '../../styles/AppPanel.scss'
+import '../../styles/ButtonSettings.scss'
 
 import { IconContext } from "react-icons";
 
