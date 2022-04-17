@@ -35,8 +35,6 @@ const App = () => {
     isClicked, setIsClicked
 }
 
-console.log(openedAppOrder);
-
   return (
     <div className="App">
       <OpenAppContext.Provider value={openAppContextValue}>

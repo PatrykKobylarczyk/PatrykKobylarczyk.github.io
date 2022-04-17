@@ -1,6 +1,7 @@
-import React, { useContext } from 'react';
+import React, { useState, useContext } from 'react';
 
 import { OpenAppContext } from '../../../context/OpenAppContext'
+import { FullScreenContext } from '../../../context/FullScreenContext';
 
 import FilesWindow from '../AppsWindows/FilesWindow';
 import MailWindow from '../AppsWindows/MailWindow';
@@ -16,6 +17,9 @@ const OpenedAppList = () => {
         gamesBtnId,
         openedAppOrder
     } = useContext(OpenAppContext)
+
+    const [isFullScreen, setIsFullScreen] = useState(false)
+    const [fullScreenWindows, setFullScreenWindows] = useState([])
 
     const appList = [
         {
@@ -36,15 +40,17 @@ const OpenedAppList = () => {
         }
     ];
 
-    const openedAppTranslation = [ 'firstWindow', 'secondWindow', 'thirdWindow', 'fourthWindow']
+    const openedAppTranslation = ['firstWindow', 'secondWindow', 'thirdWindow', 'fourthWindow']
 
-    const openedAppList = openedAppOrder.map((app, index) => <li key={appList[app-1].id} className={`basicAppWindow ${openedAppTranslation[index]}`}>{appList[app-1].component}</li>)
+    const openedAppList = openedAppOrder.map((app, index) => <li key={appList[app - 1].id} className={`${openedAppTranslation[index]} ${isFullScreen ? 'window_active' : null}`}>{appList[app - 1].component}</li>)
 
-    
     return (
-        <ul>
-            {openedAppList}
-        </ul>);
+        <FullScreenContext.Provider value={{ isFullScreen, setIsFullScreen, fullScreenWindows, setFullScreenWindows }}>
+            <ul>
+                {openedAppList}
+            </ul>
+        </FullScreenContext.Provider>
+    );
 }
 
 export default OpenedAppList;

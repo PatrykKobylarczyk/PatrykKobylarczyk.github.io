@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 
 import '../../../styles/BasicAppWindow.scss'
 import { FullScreenContext } from '../../../context/FullScreenContext';
@@ -6,15 +6,13 @@ import TabsPanel from '../BasicAppWindow/TabsPanel';
 
 const GamesWindow = (props) => {
 
-    const [isFullScreen, setIsFullScreen] = useState(false)
+    const { fullScreenWindows } = useContext(FullScreenContext)
 
     return (
-        <FullScreenContext.Provider value={{ isFullScreen, setIsFullScreen }}>
-            <div className={isFullScreen ? 'fullScreen' : null} >
-                <TabsPanel id={props.id} />
-                <h1>Games window</h1>
-            </div>
-        </FullScreenContext.Provider>
+        <div className={`basicAppWindow ${fullScreenWindows.includes(props.id) ? 'fullScreen' : null}`} >
+            <TabsPanel id={props.id} />
+            <h1>Games window</h1>
+        </div>
     );
 }
 

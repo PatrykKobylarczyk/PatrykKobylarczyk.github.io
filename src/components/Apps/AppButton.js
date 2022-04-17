@@ -12,10 +12,10 @@ const AppButton = (props) => {
 
     const { setHover } = useContext(HoverButtonsContext)
     const {
-        setIsFilesOpened, setFilesBtnId,
-        setIsMailOpened, setMailBtnId,
-        setIsSettingsOpened, setSettingsBtnId,
-        setIsGamesOpened, setGamesBtnId,
+        setFilesBtnId,
+        setMailBtnId,
+        setSettingsBtnId,
+        setGamesBtnId,
         openedAppOrder, setOpenedAppOrder,
     } = useContext(OpenAppContext);
 

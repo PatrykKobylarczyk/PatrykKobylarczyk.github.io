@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import '../../../styles/TabsPanelButtons.scss'
 
@@ -8,11 +8,12 @@ import CloseBtn from './TabsPanelButtons/CloseBtn';
 
 const TabsPanelButtons = (props) => {
 
+
     return (
         <div className='tabsPanelButtons'>
             <MinimizeBtn />
-            <MaximizeBtn />
-            <CloseBtn id={props.id}/>
+            <MaximizeBtn id={props.id} />
+            <CloseBtn id={props.id} />
         </div>
     );
 }

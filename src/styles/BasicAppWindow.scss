@@ -4,18 +4,28 @@
     width: 65vw;
     height: 70vh;
     background-color: black;
-    border: 1px solid rgb(231, 10, 53);
+    // border: 1px solid rgb(231, 10, 53);
     border-radius: 10px;
     color: white;
 
-    position: absolute;
-    top: 43%;
-    left: 50%;
+    // position: absolute;
+    // top: 43%;
+    // left: 50%;
 
     display: grid;
     place-items: center;
 
     z-index: 5;
+}
+
+.firstWindow, .secondWindow, .thirdWindow, .fourthWindow{
+    position: absolute;
+    top: 43%;
+    left: 50%;
+}
+
+.window_active{
+    transform: translate(-50%, -50%);
 }
 
 .firstWindow{
@@ -38,11 +48,8 @@
 
 .fullScreen{
     // animation: fullScreen .4s forwards ease-in-out;
-    width: 100%;
+    width: 100vw;
     height: calc(100vh - (2rem + 70px));
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
 }
 
 .partScreen{

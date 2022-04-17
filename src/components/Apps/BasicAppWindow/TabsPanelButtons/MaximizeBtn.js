@@ -7,31 +7,39 @@ import { FullScreenContext } from '../../../../context/FullScreenContext';
 import MaximizeBtnIconFS from './MaximizeBtnIconFS'
 import MaximizeBtnIconPS from './MaximizeBtnIconPS'
 
-const MaximizeBtn = () => {
+const MaximizeBtn = (props) => {
 
     const [isMaximizeHover, setIsMaximizeHover] = useState(false);
     const [clicked, setClicked] = useState(false)
-    const { isFullScreen, setIsFullScreen, setAnimationClass } = useContext(FullScreenContext);
+    const { fullScreenWindows, setFullScreenWindows } = useContext(FullScreenContext);
 
-    const MaximizeBtnHoverHandler = () => {
-        setIsMaximizeHover(prevState => !prevState);
+    const MaximizeBtnHoverHandlerEnter = () => {
+        setIsMaximizeHover(true);
+    }
+    const MaximizeBtnHoverHandlerLeave = () => {
+        setIsMaximizeHover(false);
     }
 
-    const MaximizeAppHandler = () => {
-        setIsFullScreen(prevState => !prevState);
-        setAnimationClass(isFullScreen ? 'partScreen' : 'fullScreen')
-        setClicked(prevState => !prevState)
+    const MaximizeAppHandler = (id) => {
+        if (!fullScreenWindows.includes(id)) {
+            setFullScreenWindows(prev => [...prev, id]);
+            setClicked(true);
+        } else {
+            setFullScreenWindows(
+                fullScreenWindows.filter(app => app !== id)
+            )
+            setClicked(false)
+        }
     }
-
 
     return (
         <div className='panelButtons'>
             <button className='maximizeBtn'
-                onMouseEnter={MaximizeBtnHoverHandler}
-                onMouseLeave={MaximizeBtnHoverHandler}
-                onClick={MaximizeAppHandler}
+                onMouseEnter={MaximizeBtnHoverHandlerEnter}
+                onMouseLeave={MaximizeBtnHoverHandlerLeave}
+                onClick={() => MaximizeAppHandler(props.id)}
             >
-                {isMaximizeHover ? (clicked ? <MaximizeBtnIconPS /> : <MaximizeBtnIconFS /> ): null}
+                {isMaximizeHover ? (clicked ? <MaximizeBtnIconPS /> : <MaximizeBtnIconFS />) : null}
             </button>
         </div>
     );
