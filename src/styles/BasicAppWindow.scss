@@ -4,12 +4,12 @@
     width: 65vw;
     height: 70vh;
     background-color: black;
-    border: 1px solid rgb(255, 208, 0);
+    border: 1px solid rgb(231, 10, 53);
     border-radius: 10px;
     color: white;
 
     position: absolute;
-    top: 40%;
+    top: 43%;
     left: 50%;
 
     display: grid;
@@ -18,51 +18,62 @@
     z-index: 5;
 }
 
-.files{
-    transform: translate(-50%, -50%)
+.firstWindow{
+    transform: translate(-50%, -50%);
+    z-index: 10;
 }
 
-.mail{
-    transform: translate(-54%,-46%)
+.secondWindow{
+    transform: translate(-54%,-47%);
+    z-index: 11;
 }
-.settings{
-    transform: translate(-58%,-42%)
+.thirdWindow{
+    transform: translate(-58%,-44%);
+    z-index: 12;
 }
-.games{
-    transform: translate(-62%,-38%)
+.fourthWindow{
+    transform: translate(-62%,-41%);
+    z-index: 13;
 }
 
 .fullScreen{
-    animation: fullScreen .4s forwards ease-in-out;
+    // animation: fullScreen .4s forwards ease-in-out;
+    width: 100%;
+    height: calc(100vh - (2rem + 70px));
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .partScreen{
-    animation: partScreen .4s forwards ease-in-out;
+    // animation: partScreen .4s forwards ease-in-out;
+    width: 65vw;
+    height: 70vh;
 }
 
 
 
-@keyframes fullScreen {
-    from{
-        width: 65vw;
-        height: 75vh;
-    }
-    to{
-        width: 100%;
-        height: 100vh;
-        top: 50%;
-        border-radius: 0;
-    }
-}
-@keyframes partScreen {
-    from{
-        width: 100%;
-        height: 100vh;
-        top: 50%;
-        border-radius: 0;
-    }
-    to{
-        width: 65vw;
-        height: 75vh;
-    }
-}
+// @keyframes fullScreen {
+//     from{
+//         width: 65vw;
+//         height: 75vh;
+//     }
+//     to{
+//         width: 100%;
+//         height: 100vh;
+//         top: 50%;
+//         border-radius: 0;
+//     }
+// }
+// @keyframes partScreen {
+//     from{
+//         width: 100%;
+//         height: 100vh;
+//         top: 50%;
+//         border-radius: 0;
+//     }
+//     to{
+//         width: 65vw;
+//         height: 75vh;
+//     }
+// }

@@ -1,4 +1,4 @@
-import React, { useContext} from 'react';
+import React, { useContext } from 'react';
 
 import { OpenAppContext } from '../../../context/OpenAppContext'
 
@@ -10,9 +10,9 @@ import GamesWindow from '../AppsWindows/GamesWindow';
 const OpenedAppList = () => {
 
     const {
-        filesBtnId, 
-        mailBtnId, 
-        settingsBtnId, 
+        filesBtnId,
+        mailBtnId,
+        settingsBtnId,
         gamesBtnId,
         openedAppOrder
     } = useContext(OpenAppContext)
@@ -36,12 +36,11 @@ const OpenedAppList = () => {
         }
     ];
 
-  
+    const openedAppTranslation = [ 'firstWindow', 'secondWindow', 'thirdWindow', 'fourthWindow']
 
-    const openedAppListFilter = appList.filter(app => openedAppOrder.includes(app.id) ? app : null)
+    const openedAppList = openedAppOrder.map((app, index) => <li key={appList[app-1].id} className={`basicAppWindow ${openedAppTranslation[index]}`}>{appList[app-1].component}</li>)
 
-    const openedAppList = openedAppListFilter.map(app => <li key={app.id}>{app.component}</li>)
-
+    
     return (
         <ul>
             {openedAppList}
