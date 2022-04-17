@@ -16,30 +16,25 @@ const AppButton = (props) => {
         setIsMailOpened, setMailBtnId,
         setIsSettingsOpened, setSettingsBtnId,
         setIsGamesOpened, setGamesBtnId,
-        openedAppOrder, setOpenedAppOrder, 
-        isClicked, setIsClicked
+        openedAppOrder, setOpenedAppOrder,
     } = useContext(OpenAppContext);
 
     const [background, setBackground] = useState(props.background);
-    
+
 
     const openAppHandler = (id) => {
         switch (id) {
             case 1:
                 setFilesBtnId(id);
-                setIsClicked(prevState => !prevState)
                 break;
             case 2:
                 setMailBtnId(id)
-                setIsClicked(prevState => !prevState)
                 break;
             case 3:
                 setSettingsBtnId(id)
-                setIsClicked(prevState => !prevState)
                 break;
             case 4:
                 setGamesBtnId(id)
-                setIsClicked(prevState => !prevState)
                 break;
             default:
                 console.log('Ups');
@@ -52,7 +47,6 @@ const AppButton = (props) => {
             })
     }
 
-
     const enterCurrentAppHandler = (id) => {
         setHover(true)
         setBackground(props.backgroundHover)
@@ -61,6 +55,8 @@ const AppButton = (props) => {
         setHover(false)
         setBackground(props.background)
     }
+
+    const arrayIncludesApp = openedAppOrder.includes(props.id)
 
     return (
         <li>
@@ -71,8 +67,10 @@ const AppButton = (props) => {
                 onMouseLeave={() => leaveCurrentAppHandler(props.id)}
                 onClick={() => openAppHandler(props.id)}
             >{props.icon}
-                <IconContext.Provider value={{ size: 5, color: 'white'}}>
-                    <div className={`buttonIsActive ${isClicked && 'btnOn'}`}>{isClicked && <FaCheck />}</div>
+                <IconContext.Provider value={{ size: 5, color: 'white' }}>
+                    <div className={`buttonIsActive ${arrayIncludesApp && 'btnOn'}`}>
+                        { arrayIncludesApp && <FaCheck />}
+                    </div>
                 </IconContext.Provider>
             </button >
 
