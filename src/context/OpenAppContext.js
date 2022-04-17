@@ -22,6 +22,8 @@ export const OpenAppContext = createContext({
     setGamesBtnId: () => { },
 
     openedAppOrder: [],
-    setOpenedAppOrder: () => { }
+    setOpenedAppOrder: () => { },
+    isClicked: '',
+    setIsClicked: () => { }
 });
 

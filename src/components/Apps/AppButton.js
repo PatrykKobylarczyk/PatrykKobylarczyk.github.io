@@ -4,6 +4,8 @@ import '../../styles/ButtonSettings.scss'
 
 import { HoverButtonsContext } from '../../context/HoverButtonsContext';
 import { OpenAppContext } from '../../context/OpenAppContext';
+import { IconContext } from "react-icons";
+import { FaCheck } from 'react-icons/fa'
 
 
 const AppButton = (props) => {
@@ -14,28 +16,30 @@ const AppButton = (props) => {
         setIsMailOpened, setMailBtnId,
         setIsSettingsOpened, setSettingsBtnId,
         setIsGamesOpened, setGamesBtnId,
-        setOpenedAppOrder
+        openedAppOrder, setOpenedAppOrder, 
+        isClicked, setIsClicked
     } = useContext(OpenAppContext);
 
     const [background, setBackground] = useState(props.background);
+    
 
     const openAppHandler = (id) => {
         switch (id) {
             case 1:
-                setIsFilesOpened(prevState => !prevState);
                 setFilesBtnId(id);
+                setIsClicked(prevState => !prevState)
                 break;
             case 2:
-                setIsMailOpened(prevState => !prevState);
                 setMailBtnId(id)
+                setIsClicked(prevState => !prevState)
                 break;
             case 3:
-                setIsSettingsOpened(prevState => !prevState);
                 setSettingsBtnId(id)
+                setIsClicked(prevState => !prevState)
                 break;
             case 4:
-                setIsGamesOpened(prevState => !prevState);
                 setGamesBtnId(id)
+                setIsClicked(prevState => !prevState)
                 break;
             default:
                 console.log('Ups');
@@ -43,9 +47,8 @@ const AppButton = (props) => {
 
         setOpenedAppOrder(
             (prev) => {
-                if (!prev.includes(id)) 
-                { return [...prev, id] }
-                else {return [...prev]}
+                if (!prev.includes(id)) { return [...prev, id] }
+                else { return [...prev] }
             })
     }
 
@@ -67,7 +70,12 @@ const AppButton = (props) => {
                 onMouseEnter={() => enterCurrentAppHandler(props.id)}
                 onMouseLeave={() => leaveCurrentAppHandler(props.id)}
                 onClick={() => openAppHandler(props.id)}
-            >{props.icon}</button>
+            >{props.icon}
+                <IconContext.Provider value={{ size: 5, color: 'white'}}>
+                    <div className={`buttonIsActive ${isClicked && 'btnOn'}`}>{isClicked && <FaCheck />}</div>
+                </IconContext.Provider>
+            </button >
+
         </li >
     );
 }

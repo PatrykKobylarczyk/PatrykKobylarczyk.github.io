@@ -20,6 +20,7 @@ const App = () => {
   const [settingsBtnId, setSettingsBtnId] = useState()
   const [gamesBtnId, setGamesBtnId] = useState()
   const [openedAppOrder, setOpenedAppOrder] = useState([])
+  const [isClicked, setIsClicked] = useState(false);
 
   const openAppContextValue = {
     isFilesOpened, setIsFilesOpened,
@@ -30,7 +31,8 @@ const App = () => {
     settingsBtnId, setSettingsBtnId, 
     isGamesOpened, setIsGamesOpened, 
     gamesBtnId, setGamesBtnId,
-    openedAppOrder, setOpenedAppOrder
+    openedAppOrder, setOpenedAppOrder,
+    isClicked, setIsClicked
 }
 
 console.log(openedAppOrder);

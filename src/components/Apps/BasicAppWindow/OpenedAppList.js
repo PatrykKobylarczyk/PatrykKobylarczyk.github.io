@@ -10,30 +10,27 @@ import GamesWindow from '../AppsWindows/GamesWindow';
 const OpenedAppList = () => {
 
     const {
-        isFilesOpened, filesBtnId,
-        isMailOpened, mailBtnId,
-        isSettingsOpened, settingsBtnId,
-        isGamesOpened, gamesBtnId,
+        filesBtnId, 
+        mailBtnId, 
+        settingsBtnId, 
+        gamesBtnId,
+        openedAppOrder
     } = useContext(OpenAppContext)
 
     const appList = [
         {
-            status: isFilesOpened,
             component: <FilesWindow id={filesBtnId} />,
             id: filesBtnId
         },
         {
-            status: isMailOpened,
             component: <MailWindow id={mailBtnId} />,
             id: mailBtnId
         },
         {
-            status: isSettingsOpened,
             component: <SettingsWindow id={settingsBtnId} />,
             id: settingsBtnId
         },
         {
-            status: isGamesOpened,
             component: <GamesWindow id={gamesBtnId} />,
             id: gamesBtnId
         }
@@ -41,7 +38,7 @@ const OpenedAppList = () => {
 
   
 
-    const openedAppListFilter = appList.filter(app => app.status ? app : null)
+    const openedAppListFilter = appList.filter(app => openedAppOrder.includes(app.id) ? app : null)
 
     const openedAppList = openedAppListFilter.map(app => <li key={app.id}>{app.component}</li>)
 

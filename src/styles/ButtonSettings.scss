@@ -1,21 +1,47 @@
 .buttonSettings{
-    height: 40px;
-    width: 40px;
+    height: 45px;
+    width: 45px;
     border-radius: 10px;
-    margin: 4px;
+    margin: 8px;
     border: none;
+
+    position: relative;
     
     box-shadow:inset 0 -2px 2px 1px rgba(0, 0, 0, 0.3);
+    box-shadow: 4px 4px 4px 0 rgba(0, 0, 0, 0.5);
     display: grid;
     place-items: center;
     transition: all .15s ease-in;
+
+    background: linear-gradient(95deg, rgb(47, 49, 51), rgb(36, 37, 39));
+    
 }
 
 .buttonSettings:hover {
+    background: linear-gradient(120deg, rgb(58, 61, 63), rgb(37, 37, 39));
     transform: translateY(-5px) scale(1.15);
     cursor: pointer;
 }
 
 li{
     list-style: none;
+}
+
+.buttonIsActive{
+    width: 8px;
+    height: 8px;
+    border-radius: 2px;
+
+    background: rgb(31, 32, 32);
+    box-shadow: inset -1px -1px 1px 0 rgba(0, 0, 0, .7);
+    box-shadow: inset .5px .5px .5px 0 rgba(255, 255, 255, 0.2);
+    position: absolute;
+    top: 4px;
+    right: 4px;
+
+    display: grid;
+    place-items: center;
+}
+.btnOn{
+    background: linear-gradient(95deg, rgb(231, 10, 53), rgb(168, 22, 51));
 }
