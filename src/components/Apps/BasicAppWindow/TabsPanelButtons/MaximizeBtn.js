@@ -29,7 +29,8 @@ const MaximizeBtn = (props) => {
                 fullScreenWindows.filter(app => app !== id)
             )
             setClicked(false)
-        }
+        };
+        setIsMaximizeHover(false);
     }
 
     return (
