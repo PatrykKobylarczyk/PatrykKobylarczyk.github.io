@@ -4,6 +4,7 @@ import '../../styles/ButtonSettings.scss'
 
 import { HoverButtonsContext } from '../../context/HoverButtonsContext';
 import { OpenAppContext } from '../../context/OpenAppContext';
+import { MinimizedAppContext } from '../../context/MinimizedAppContext';
 import { IconContext } from "react-icons";
 import { FaCheck } from 'react-icons/fa'
 
@@ -11,6 +12,7 @@ import { FaCheck } from 'react-icons/fa'
 const AppButton = (props) => {
 
     const { setHover } = useContext(HoverButtonsContext)
+    const { minimizedApps } = useContext(MinimizedAppContext)
     const {
         setFilesBtnId,
         setMailBtnId,
@@ -18,6 +20,7 @@ const AppButton = (props) => {
         setGamesBtnId,
         openedAppOrder, setOpenedAppOrder,
     } = useContext(OpenAppContext);
+
 
     const [background, setBackground] = useState(props.background);
 
@@ -57,6 +60,11 @@ const AppButton = (props) => {
     }
 
     const arrayIncludesApp = openedAppOrder.includes(props.id)
+    const arrarIncludesMinimizedApps= minimizedApps.includes(props.id)
+
+
+    console.log(minimizedApps);
+    console.log(arrarIncludesMinimizedApps);
 
     return (
         <li>
@@ -68,7 +76,7 @@ const AppButton = (props) => {
                 onClick={() => openAppHandler(props.id)}
             >{props.icon}
                 <IconContext.Provider value={{ size: 5, color: 'white' }}>
-                    <div className={`buttonIsActive ${arrayIncludesApp && 'btnOn'}`}>
+                    <div className={`buttonIsActive ${arrayIncludesApp && 'btnOn'} ${arrarIncludesMinimizedApps && 'btnMinimized'}`}>
                         { arrayIncludesApp && <FaCheck />}
                     </div>
                 </IconContext.Provider>

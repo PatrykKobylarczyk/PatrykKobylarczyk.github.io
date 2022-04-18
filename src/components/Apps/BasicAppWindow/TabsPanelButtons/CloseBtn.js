@@ -4,13 +4,15 @@ import '../../../../styles/PanelButtons.scss';
 
 import { OpenAppContext } from '../../../../context/OpenAppContext';
 import { FullScreenContext } from '../../../../context/FullScreenContext';
+import { MinimizedAppContext } from '../../../../context/MinimizedAppContext';
 import CloseBtnIcon from './CloseBtnIcon';
 
 const CloseBtn = (props) => {
 
-    const { setOpenedAppOrder } = useContext(OpenAppContext)
-    const { fullScreenWindows, setFullScreenWindows } = useContext(FullScreenContext)
-    const [isCloseHover, setIsCloseHover] = useState(false)
+    const { setOpenedAppOrder } = useContext(OpenAppContext);
+    const { fullScreenWindows, setFullScreenWindows } = useContext(FullScreenContext);
+    const { setMinimizedApps} = useContext(MinimizedAppContext);
+    const [isCloseHover, setIsCloseHover] = useState(false);
 
 
     const CloseButtonHoverHandlerEnter = () => {
@@ -24,9 +26,15 @@ const CloseBtn = (props) => {
     const CloseAppHandler = (id) => {
         setOpenedAppOrder((prev) => {
             setFullScreenWindows(fullScreenWindows.filter(app => app !== id));
-            const openedapps = prev.filter(app => app !== id)
-            return openedapps
+            const openedApps = prev.filter(app => app !== id)
+            return openedApps
         })
+        setMinimizedApps((prev) => {
+            const removeMinimizedApp = prev.filter(app => app !== id)
+            return removeMinimizedApp
+        }
+        )
+
     }
 
     return (

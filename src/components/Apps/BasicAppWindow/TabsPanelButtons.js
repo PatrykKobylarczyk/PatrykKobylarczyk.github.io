@@ -11,7 +11,7 @@ const TabsPanelButtons = (props) => {
 
     return (
         <div className='tabsPanelButtons'>
-            <MinimizeBtn />
+            <MinimizeBtn id={props.id}/>
             <MaximizeBtn id={props.id} />
             <CloseBtn id={props.id} />
         </div>
