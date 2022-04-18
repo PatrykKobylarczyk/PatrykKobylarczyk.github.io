@@ -18,7 +18,6 @@ const OpenedAppList = () => {
         openedAppOrder
     } = useContext(OpenAppContext)
 
-    const [isFullScreen, setIsFullScreen] = useState(false)
     const [fullScreenWindows, setFullScreenWindows] = useState([])
 
     const appList = [
@@ -42,10 +41,11 @@ const OpenedAppList = () => {
 
     const openedAppTranslation = ['firstWindow', 'secondWindow', 'thirdWindow', 'fourthWindow']
 
-    const openedAppList = openedAppOrder.map((app, index) => <li key={appList[app - 1].id} className={`${openedAppTranslation[index]} ${isFullScreen ? 'window_active' : null}`}>{appList[app - 1].component}</li>)
+    const openedAppList = openedAppOrder.map((app, index) => <li key={appList[app - 1].id} className={fullScreenWindows.includes(app) ? 'window_active' : openedAppTranslation[index]}>{appList[app - 1].component}</li>)
+
 
     return (
-        <FullScreenContext.Provider value={{ isFullScreen, setIsFullScreen, fullScreenWindows, setFullScreenWindows }}>
+        <FullScreenContext.Provider value={{ fullScreenWindows, setFullScreenWindows }}>
             <ul>
                 {openedAppList}
             </ul>

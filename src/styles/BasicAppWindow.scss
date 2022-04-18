@@ -18,7 +18,7 @@
     z-index: 5;
 }
 
-.firstWindow, .secondWindow, .thirdWindow, .fourthWindow{
+.firstWindow, .secondWindow, .thirdWindow, .fourthWindow, .window_active{
     position: absolute;
     top: 43%;
     left: 50%;
@@ -26,24 +26,21 @@
 
 .window_active{
     transform: translate(-50%, -50%);
+    z-index: 10;
 }
 
 .firstWindow{
     transform: translate(-50%, -50%);
-    z-index: 10;
 }
 
 .secondWindow{
     transform: translate(-54%,-47%);
-    z-index: 11;
 }
 .thirdWindow{
     transform: translate(-58%,-44%);
-    z-index: 12;
 }
 .fourthWindow{
     transform: translate(-62%,-41%);
-    z-index: 13;
 }
 
 .fullScreen{

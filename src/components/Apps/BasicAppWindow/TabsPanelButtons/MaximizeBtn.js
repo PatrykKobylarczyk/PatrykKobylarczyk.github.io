@@ -13,6 +13,7 @@ const MaximizeBtn = (props) => {
     const [clicked, setClicked] = useState(false)
     const { fullScreenWindows, setFullScreenWindows } = useContext(FullScreenContext);
 
+
     const MaximizeBtnHoverHandlerEnter = () => {
         setIsMaximizeHover(true);
     }
@@ -27,8 +28,8 @@ const MaximizeBtn = (props) => {
         } else {
             setFullScreenWindows(
                 fullScreenWindows.filter(app => app !== id)
-            )
-            setClicked(false)
+            );
+            setClicked(false);
         };
         setIsMaximizeHover(false);
     }
