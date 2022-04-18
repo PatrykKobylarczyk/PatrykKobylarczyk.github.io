@@ -8,7 +8,7 @@ import { OpenAppContext } from '../../../../context/OpenAppContext';
 
 const MinimizeBtn = (props) => {
 
-    const {minimizedApps, setMinimizedApps} = useContext(MinimizedAppContext)
+    const { minimizedApps, setMinimizedApps } = useContext(MinimizedAppContext)
     const { setOpenedAppOrder } = useContext(OpenAppContext)
     const [isMinimizeHover, setIsMinimizeHover] = useState(false)
 
@@ -21,7 +21,7 @@ const MinimizeBtn = (props) => {
         setIsMinimizeHover(false)
     }
 
-    const MinimizeAppHandler = (id) =>{
+    const MinimizeAppHandler = (id) => {
         if (!minimizedApps.includes(id)) {
             setMinimizedApps(prev => [...prev, id]);
         } else {
@@ -30,24 +30,21 @@ const MinimizeBtn = (props) => {
             );
         };
         setIsMinimizeHover(false);
-        console.log(id);
 
         //remove app from opened app order context
         setOpenedAppOrder((prev) => {
             const openedApps = prev.filter(app => app !== id)
             return openedApps
         })
-        
     }
 
-    
     return (
         <div className='panelButtons'>
             <button className='minimizeBtn'
                 onMouseEnter={MinimizeHandlerEnter}
                 onMouseLeave={MinimizeHandlerLeave}
-                onClick= {() => MinimizeAppHandler(props.id)}
-                >
+                onClick={() => MinimizeAppHandler(props.id)}
+            >
                 {isMinimizeHover && <MinimizeBtnIcon />}
             </button>
         </div>

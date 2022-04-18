@@ -12,7 +12,7 @@ import { FaCheck } from 'react-icons/fa'
 const AppButton = (props) => {
 
     const { setHover } = useContext(HoverButtonsContext)
-    const { minimizedApps } = useContext(MinimizedAppContext)
+    const { minimizedApps, setMinimizedApps } = useContext(MinimizedAppContext)
     const {
         setFilesBtnId,
         setMailBtnId,
@@ -48,6 +48,10 @@ const AppButton = (props) => {
                 if (!prev.includes(id)) { return [...prev, id] }
                 else { return [...prev] }
             })
+        setMinimizedApps((prev) => {
+            const removeMinimizedApp = prev.filter(app => app !== id)
+            return removeMinimizedApp
+        })
     }
 
     const enterCurrentAppHandler = (id) => {
@@ -60,12 +64,9 @@ const AppButton = (props) => {
     }
 
     const arrayIncludesApp = openedAppOrder.includes(props.id)
-    const arrarIncludesMinimizedApps= minimizedApps.includes(props.id)
-
+    const arrarIncludesMinimizedApps = minimizedApps.includes(props.id)
 
     console.log(minimizedApps);
-    console.log(arrarIncludesMinimizedApps);
-
     return (
         <li>
             <button
@@ -76,8 +77,8 @@ const AppButton = (props) => {
                 onClick={() => openAppHandler(props.id)}
             >{props.icon}
                 <IconContext.Provider value={{ size: 5, color: 'white' }}>
-                    <div className={`buttonIsActive ${arrayIncludesApp && 'btnOn'} ${arrarIncludesMinimizedApps && 'btnMinimized'}`}>
-                        { arrayIncludesApp && <FaCheck />}
+                    <div className={`buttonIsActive ${arrayIncludesApp && 'btnOn'} ${arrarIncludesMinimizedApps ? 'btnMinimized' : 'dupa'} `}>
+                        {arrayIncludesApp && <FaCheck />}
                     </div>
                 </IconContext.Provider>
             </button >

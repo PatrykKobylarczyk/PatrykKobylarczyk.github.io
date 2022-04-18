@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react';
 
 import { OpenAppContext } from '../../../context/OpenAppContext'
 import { FullScreenContext } from '../../../context/FullScreenContext';
-import { MinimizedAppContext } from '../../../context/MinimizedAppContext';
+
 
 import FilesWindow from '../AppsWindows/FilesWindow';
 import MailWindow from '../AppsWindows/MailWindow';
@@ -20,7 +20,7 @@ const OpenedAppList = () => {
     } = useContext(OpenAppContext)
 
     const [fullScreenWindows, setFullScreenWindows] = useState([])
-    const [minimizedApps, setMinimizedApps] = useState([])
+    
 
     const appList = [
         {
@@ -46,14 +46,11 @@ const OpenedAppList = () => {
 
     const openedAppList = openedAppOrder.map((app, index) => <li key={appList[app - 1].id} className={fullScreenWindows.includes(app) ? 'window_active' : openedAppTranslation[index]}>{appList[app - 1].component}</li>)
 
-
     return (
         <FullScreenContext.Provider value={{ fullScreenWindows, setFullScreenWindows }}>
-            <MinimizedAppContext.Provider value={{minimizedApps, setMinimizedApps}}>
                 <ul>
                     {openedAppList}
                 </ul>
-            </MinimizedAppContext.Provider>
         </FullScreenContext.Provider>
     );
 }
