@@ -4,6 +4,7 @@ import { OpenAppContext } from '../../../context/OpenAppContext'
 import { FullScreenContext } from '../../../context/FullScreenContext';
 
 
+
 import FilesWindow from '../AppsWindows/FilesWindow';
 import MailWindow from '../AppsWindows/MailWindow';
 import SettingsWindow from '../AppsWindows/SettingsWindow';
@@ -20,7 +21,6 @@ const OpenedAppList = () => {
     } = useContext(OpenAppContext)
 
     const [fullScreenWindows, setFullScreenWindows] = useState([])
-    
 
     const appList = [
         {
@@ -44,13 +44,18 @@ const OpenedAppList = () => {
     //create app windows with translation - add class with transition: translate(x,y)
     const openedAppTranslation = ['firstWindow', 'secondWindow', 'thirdWindow', 'fourthWindow']
 
-    const openedAppList = openedAppOrder.map((app, index) => <li key={appList[app - 1].id} className={fullScreenWindows.includes(app) ? 'window_active' : openedAppTranslation[index]}>{appList[app - 1].component}</li>)
+    const openedAppList = openedAppOrder.map((app, index) =>
+        <li
+            key={appList[app - 1].id}
+            className={fullScreenWindows.includes(app) ? 'window_active' : openedAppTranslation[index]}
+            >{appList[app - 1].component}
+        </li>)
 
     return (
         <FullScreenContext.Provider value={{ fullScreenWindows, setFullScreenWindows }}>
-                <ul>
-                    {openedAppList}
-                </ul>
+            <ul>
+                {openedAppList}
+            </ul>
         </FullScreenContext.Provider>
     );
 }

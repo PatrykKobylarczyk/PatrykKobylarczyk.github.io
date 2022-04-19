@@ -47,8 +47,10 @@ const AppButton = (props) => {
         setOpenedAppOrder(
             (prev) => {
                 if (!prev.includes(id)) { return [...prev, id] }
+                else if (prev.includes(id)) {return prev.filter(app => app !== id)}
                 else { return [...prev] }
             })
+
         setMinimizedApps((prev) => {
             const removeMinimizedApp = prev.filter(app => app !== id)
             return removeMinimizedApp
@@ -80,7 +82,7 @@ const AppButton = (props) => {
             >{props.icon}
                 <IconContext.Provider value={{ size: 5, color: 'white' }}>
                     <div className={`buttonIsActive ${arrayIncludesApp && 'btnOn'} ${arrayIncludesMinimizedApps ? 'btnMinimized' : 'dupa'} `}>
-                        {arrayIncludesApp ? <FaCheck /> : arrayIncludesMinimizedApps ? <FaRegWindowMinimize/>: null}
+                        {arrayIncludesApp ? <FaCheck /> : arrayIncludesMinimizedApps ? <FaRegWindowMinimize /> : null}
                     </div>
                 </IconContext.Provider>
             </button >

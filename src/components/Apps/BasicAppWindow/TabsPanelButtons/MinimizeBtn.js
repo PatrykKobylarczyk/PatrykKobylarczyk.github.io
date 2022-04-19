@@ -33,10 +33,9 @@ const MinimizeBtn = (props) => {
 
         //remove app from opened app order context
         setOpenedAppOrder((prev) => {
-            const openedApps = prev.filter(app => app !== id)
-            return openedApps
-        })
-    }
+            return prev.filter(app => app !== id)
+        });
+    };
 
     return (
         <div className='panelButtons'>
