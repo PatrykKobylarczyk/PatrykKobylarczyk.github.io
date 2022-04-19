@@ -7,6 +7,7 @@ import { OpenAppContext } from '../../context/OpenAppContext';
 import { MinimizedAppContext } from '../../context/MinimizedAppContext';
 import { IconContext } from "react-icons";
 import { FaCheck } from 'react-icons/fa'
+import { FaRegWindowMinimize } from 'react-icons/fa'
 
 
 const AppButton = (props) => {
@@ -64,9 +65,10 @@ const AppButton = (props) => {
     }
 
     const arrayIncludesApp = openedAppOrder.includes(props.id)
-    const arrarIncludesMinimizedApps = minimizedApps.includes(props.id)
+    const arrayIncludesMinimizedApps = minimizedApps.includes(props.id)
 
-    console.log(minimizedApps);
+
+
     return (
         <li>
             <button
@@ -77,8 +79,8 @@ const AppButton = (props) => {
                 onClick={() => openAppHandler(props.id)}
             >{props.icon}
                 <IconContext.Provider value={{ size: 5, color: 'white' }}>
-                    <div className={`buttonIsActive ${arrayIncludesApp && 'btnOn'} ${arrarIncludesMinimizedApps ? 'btnMinimized' : 'dupa'} `}>
-                        {arrayIncludesApp && <FaCheck />}
+                    <div className={`buttonIsActive ${arrayIncludesApp && 'btnOn'} ${arrayIncludesMinimizedApps ? 'btnMinimized' : 'dupa'} `}>
+                        {arrayIncludesApp ? <FaCheck /> : arrayIncludesMinimizedApps ? <FaRegWindowMinimize/>: null}
                     </div>
                 </IconContext.Provider>
             </button >
