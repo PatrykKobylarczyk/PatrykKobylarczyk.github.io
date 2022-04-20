@@ -16,7 +16,7 @@ export const AppsData =[
         "id": 2,
         "name": "Mail",
         "icon": <BiMailSend/>,
-        "iconColor": 'white',
+        "iconColor": ''
     },
     {
         "id": 3,
@@ -28,7 +28,7 @@ export const AppsData =[
         "id": 4,
         "name": "Games",
         "icon": <RiGamepadLine/>,
-        "iconColor": 'white',
+        "iconColor": ''
     }
 
 ]

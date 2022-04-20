@@ -18,6 +18,7 @@
     z-index: 5;
 }
 
+
 .firstWindow, .secondWindow, .thirdWindow, .fourthWindow, .window_active{
     position: absolute;
     top: 43%;
@@ -36,9 +37,11 @@
 .secondWindow{
     transform: translate(-54%,-47%);
 }
+
 .thirdWindow{
     transform: translate(-58%,-44%);
 }
+
 .fourthWindow{
     transform: translate(-62%,-41%);
 }

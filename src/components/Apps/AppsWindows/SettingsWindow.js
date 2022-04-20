@@ -1,4 +1,4 @@
-import React, { useContext, useRef } from 'react';
+import React, { useState, useContext, useRef } from 'react';
 
 import '../../../styles/BasicAppWindow.scss'
 import { FullScreenContext } from '../../../context/FullScreenContext';
@@ -11,12 +11,12 @@ const SettingsWindow = (props) => {
     const nodeRef = useRef(null);
 
     return (
-        <Draggable handle='.tabsPanel' nodeRef={nodeRef}>
-            <div className={`basicAppWindow ${fullScreenWindows.includes(props.id) ? 'fullScreen' : null}`} ref={nodeRef}>
-                <TabsPanel id={props.id} />
-                <h1>Settings window</h1>
-            </div>
-        </Draggable>
+            <Draggable handle='.tabsPanel' nodeRef={nodeRef}>
+                <div className={`basicAppWindow ${fullScreenWindows.includes(props.id) ? 'fullScreen' : null}`} ref={nodeRef}>
+                    <TabsPanel id={props.id} />
+                    <h1>Settings window</h1>
+                </div>
+            </Draggable>
     );
 }
 
