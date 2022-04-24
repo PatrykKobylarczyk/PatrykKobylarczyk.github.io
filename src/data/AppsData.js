@@ -2,6 +2,7 @@ import { FiSettings } from 'react-icons/fi'
 import { RiGamepadLine } from 'react-icons/ri'
 import { AiOutlineFolderOpen } from 'react-icons/ai'
 import { BiMailSend } from 'react-icons/bi'
+import { MdOutlineDraw } from 'react-icons/md'
 
 
 export const AppsData =[
@@ -28,6 +29,12 @@ export const AppsData =[
         "id": 4,
         "name": "Games",
         "icon": <RiGamepadLine/>,
+        "iconColor": ''
+    },
+    {
+        "id": 5,
+        "name": "PixelArt",
+        "icon": <MdOutlineDraw/>,
         "iconColor": ''
     }
 

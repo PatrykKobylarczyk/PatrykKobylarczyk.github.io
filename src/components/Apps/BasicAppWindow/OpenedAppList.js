@@ -3,12 +3,11 @@ import React, { useState, useContext } from 'react';
 import { OpenAppContext } from '../../../context/OpenAppContext'
 import { FullScreenContext } from '../../../context/FullScreenContext';
 
-
-
 import FilesWindow from '../AppsWindows/FilesWindow';
 import MailWindow from '../AppsWindows/MailWindow';
 import SettingsWindow from '../AppsWindows/SettingsWindow';
 import GamesWindow from '../AppsWindows/GamesWindow';
+import PixelArt from '../AppsWindows/PixelArt';
 
 const OpenedAppList = () => {
 
@@ -37,6 +36,10 @@ const OpenedAppList = () => {
         },
         {
             component: <GamesWindow id={gamesBtnId} />,
+            id: gamesBtnId
+        },
+        {
+            component: <PixelArt id={gamesBtnId} />,
             id: gamesBtnId
         }
     ];

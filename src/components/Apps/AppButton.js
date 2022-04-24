@@ -40,6 +40,9 @@ const AppButton = (props) => {
             case 4:
                 setGamesBtnId(id)
                 break;
+            case 5:
+                setGamesBtnId(id)
+                break;
             default:
                 console.log('Ups');
         }
@@ -47,7 +50,7 @@ const AppButton = (props) => {
         setOpenedAppOrder(
             (prev) => {
                 if (!prev.includes(id)) { return [...prev, id] }
-                else if (prev.includes(id)) {return prev.filter(app => app !== id)}
+                else if (prev.includes(id)) { return prev.filter(app => app !== id) }
                 else { return [...prev] }
             })
 
