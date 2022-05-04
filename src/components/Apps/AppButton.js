@@ -19,6 +19,7 @@ const AppButton = (props) => {
         setMailBtnId,
         setSettingsBtnId,
         setGamesBtnId,
+        setPixelBtnId,
         openedAppOrder, setOpenedAppOrder,
     } = useContext(OpenAppContext);
 
@@ -41,7 +42,7 @@ const AppButton = (props) => {
                 setGamesBtnId(id)
                 break;
             case 5:
-                setGamesBtnId(id)
+                setPixelBtnId(id)
                 break;
             default:
                 console.log('Ups');
@@ -84,7 +85,7 @@ const AppButton = (props) => {
                 onClick={() => openAppHandler(props.id)}
             >{props.icon}
                 <IconContext.Provider value={{ size: 5, color: 'white' }}>
-                    <div className={`buttonIsActive ${arrayIncludesApp && 'btnOn'} ${arrayIncludesMinimizedApps ? 'btnMinimized' : 'dupa'} `}>
+                    <div className={`buttonIsActive ${arrayIncludesApp && 'btnOn'} ${arrayIncludesMinimizedApps ? 'btnMinimized' : ''} `}>
                         {arrayIncludesApp ? <FaCheck /> : arrayIncludesMinimizedApps ? <FaRegWindowMinimize /> : null}
                     </div>
                 </IconContext.Provider>

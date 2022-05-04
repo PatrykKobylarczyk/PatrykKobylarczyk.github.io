@@ -4,6 +4,7 @@ import '../../../styles/BasicAppWindow.scss'
 import { FullScreenContext } from '../../../context/FullScreenContext';
 import TabsPanel from '../BasicAppWindow/TabsPanel';
 import Draggable from 'react-draggable'
+import Settings from '../Settings/components/Settings'
 
 const SettingsWindow = (props) => {
 
@@ -14,7 +15,7 @@ const SettingsWindow = (props) => {
             <Draggable handle='.tabsPanel' nodeRef={nodeRef}>
                 <div className={`basicAppWindow ${fullScreenWindows.includes(props.id) ? 'fullScreen' : null}`} ref={nodeRef}>
                     <TabsPanel id={props.id} />
-                    <h1>Settings window</h1>
+                    <Settings/>
                 </div>
             </Draggable>
     );

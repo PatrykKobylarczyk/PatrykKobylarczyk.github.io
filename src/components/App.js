@@ -4,6 +4,7 @@ import '../styles/App.scss';
 import { DateContext } from '../context/DateContext'
 import { OpenAppContext } from '../context/OpenAppContext'
 import { MinimizedAppContext } from '../context/MinimizedAppContext';
+import { StyleContext } from '../context/StyleContext';
 
 import NavigationPanel from './NavigationPanel'
 import ButtonToggleDate from './Date/ButtonToggleDate';
@@ -20,9 +21,11 @@ const App = () => {
   const [mailBtnId, setMailBtnId] = useState()
   const [settingsBtnId, setSettingsBtnId] = useState()
   const [gamesBtnId, setGamesBtnId] = useState()
+  const [pixelBtnId, setPixelBtnId] = useState()
   const [openedAppOrder, setOpenedAppOrder] = useState([])
   const [isClicked, setIsClicked] = useState(false);
   const [minimizedApps, setMinimizedApps] = useState([])
+  const [navPanelTransparency, setNavPanelTransparency] = useState(100)
 
   const openAppContextValue = {
     isFilesOpened, setIsFilesOpened,
@@ -33,6 +36,7 @@ const App = () => {
     settingsBtnId, setSettingsBtnId,
     isGamesOpened, setIsGamesOpened,
     gamesBtnId, setGamesBtnId,
+    pixelBtnId, setPixelBtnId,
     openedAppOrder, setOpenedAppOrder,
     isClicked, setIsClicked
   }
@@ -42,9 +46,11 @@ const App = () => {
       <OpenAppContext.Provider value={openAppContextValue}>
         <DateContext.Provider value={{ isDateVisible, setIsDateVisible }}>
           <MinimizedAppContext.Provider value={{ minimizedApps, setMinimizedApps }}>
-            <NavigationPanel />
-            <ButtonToggleDate />
-            <OpenedAppList />
+            <StyleContext.Provider value={{navPanelTransparency, setNavPanelTransparency}}>
+              <NavigationPanel />
+              <ButtonToggleDate />
+              <OpenedAppList />
+            </StyleContext.Provider>
           </MinimizedAppContext.Provider>
         </DateContext.Provider>
       </OpenAppContext.Provider>

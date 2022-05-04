@@ -16,10 +16,11 @@ const OpenedAppList = () => {
         mailBtnId,
         settingsBtnId,
         gamesBtnId,
+        pixelBtnId,
         openedAppOrder
     } = useContext(OpenAppContext)
 
-    const [fullScreenWindows, setFullScreenWindows] = useState([])
+    const [fullScreenWindows, setFullScreenWindows] = useState([]);
 
     const appList = [
         {
@@ -39,19 +40,20 @@ const OpenedAppList = () => {
             id: gamesBtnId
         },
         {
-            component: <PixelArt id={gamesBtnId} />,
-            id: gamesBtnId
+            component: <PixelArt id={pixelBtnId} />,
+            id: pixelBtnId
         }
+
     ];
 
     //create app windows with translation - add class with transition: translate(x,y)
-    const openedAppTranslation = ['firstWindow', 'secondWindow', 'thirdWindow', 'fourthWindow']
+    const openedAppTranslation = ['firstWindow', 'secondWindow', 'thirdWindow', 'fourthWindow', 'fifthWindow']
 
     const openedAppList = openedAppOrder.map((app, index) =>
         <li
             key={appList[app - 1].id}
             className={fullScreenWindows.includes(app) ? 'window_active' : openedAppTranslation[index]}
-            >{appList[app - 1].component}
+        >{appList[app - 1].component}
         </li>)
 
     return (

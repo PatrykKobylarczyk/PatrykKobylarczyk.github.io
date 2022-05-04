@@ -13,6 +13,9 @@ export const OpenAppContext = createContext({
     gamesBtnId: '',
     setGamesBtnId: () => { },
 
+    pixelBtnId: '',
+    setPixelBtnId: () => { },    
+
     openedAppOrder: [],
     setOpenedAppOrder: () => { },
     isClicked: '',

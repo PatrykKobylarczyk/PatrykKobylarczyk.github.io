@@ -5,6 +5,7 @@ import { AppsData } from '../../../data/AppsData'
 import { IconContext } from "react-icons";
 
 const TabsPanelAppData = (props) => {
+
     return (
         <IconContext.Provider value={{ size: 20, color: 'white' }}>
             <div className='tabsPanelAppData'>
