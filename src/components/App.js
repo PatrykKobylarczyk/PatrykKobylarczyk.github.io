@@ -7,7 +7,6 @@ import { MinimizedAppContext } from '../context/MinimizedAppContext';
 import { StyleContext } from '../context/StyleContext';
 
 import NavigationPanel from './NavigationPanel'
-import ButtonToggleDate from './Date/ButtonToggleDate';
 import OpenedAppList from './Apps/BasicAppWindow/OpenedAppList'
 
 const App = () => {
@@ -26,6 +25,7 @@ const App = () => {
   const [isClicked, setIsClicked] = useState(false);
   const [minimizedApps, setMinimizedApps] = useState([])
   const [navPanelTransparency, setNavPanelTransparency] = useState(100)
+  const [primaryColor, setPrimaryColor] = useState('')
 
   const openAppContextValue = {
     isFilesOpened, setIsFilesOpened,
@@ -46,9 +46,8 @@ const App = () => {
       <OpenAppContext.Provider value={openAppContextValue}>
         <DateContext.Provider value={{ isDateVisible, setIsDateVisible }}>
           <MinimizedAppContext.Provider value={{ minimizedApps, setMinimizedApps }}>
-            <StyleContext.Provider value={{navPanelTransparency, setNavPanelTransparency}}>
+            <StyleContext.Provider value={{navPanelTransparency, setNavPanelTransparency, primaryColor, setPrimaryColor}}>
               <NavigationPanel />
-              <ButtonToggleDate />
               <OpenedAppList />
             </StyleContext.Provider>
           </MinimizedAppContext.Provider>

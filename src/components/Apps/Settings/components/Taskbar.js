@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 
 import '../styles/Settings.scss';
 import '../styles/Taskbar.scss';
@@ -13,10 +13,6 @@ const Taskbar = (props) => {
     const transparencyRangeHandler = (event) => {
         setNavPanelTransparency(event.target.value)
     }
-
-    useEffect(() => {
-        console.log(navPanelTransparency)
-    }, [navPanelTransparency])
 
     return (
         <div className='basicSettings'>
