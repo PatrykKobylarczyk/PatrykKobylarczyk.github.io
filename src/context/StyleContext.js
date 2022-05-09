@@ -7,6 +7,9 @@ export const StyleContext = createContext({
     setNavPanelTransparency: () => { },
 
     primaryColor: '',
-    setPrimaryColor: () => { }
+    setPrimaryColor: () => { },
+
+    isRounded: '',
+    setIsRounded: () => { }
 });
 

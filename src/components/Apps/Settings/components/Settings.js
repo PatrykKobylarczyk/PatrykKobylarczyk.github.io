@@ -22,17 +22,18 @@ const settingsData = [
         icon: <HiOutlineColorSwatch />
     },
     {
-        name: "Taskbar",
-        id: 's2',
-        component: Taskbar,
-        icon: <CgMoveTask />
-    },
-    {
         name: "Shapes",
-        id: 's3',
+        id: 's2',
         component: Shapes,
         icon: <CgShapeTriangle />
     },
+    {
+        name: "Taskbar",
+        id: 's3',
+        component: Taskbar,
+        icon: <CgMoveTask />
+    },
+    
     {
         name: "Time",
         id: 's4',

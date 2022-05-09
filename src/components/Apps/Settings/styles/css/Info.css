@@ -1,0 +1,14 @@
+.basicSettings .info {
+  padding: 30px;
+}
+
+.basicSettings h3, .basicSettings p, .basicSettings h4 {
+  font-family: Montserrat;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.basicSettings span {
+  color: #e70a35;
+}
+/*# sourceMappingURL=Info.css.map */

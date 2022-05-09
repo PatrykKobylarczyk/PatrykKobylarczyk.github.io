@@ -12,20 +12,21 @@ import OpenedAppList from './Apps/BasicAppWindow/OpenedAppList'
 const App = () => {
   const [isDateVisible, setIsDateVisible] = useState(true)
 
-  const [isFilesOpened, setIsFilesOpened] = useState()
-  const [isMailOpened, setIsMailOpened] = useState()
-  const [isSettingsOpened, setIsSettingsOpened] = useState()
-  const [isGamesOpened, setIsGamesOpened] = useState()
-  const [filesBtnId, setFilesBtnId] = useState()
-  const [mailBtnId, setMailBtnId] = useState()
-  const [settingsBtnId, setSettingsBtnId] = useState()
-  const [gamesBtnId, setGamesBtnId] = useState()
-  const [pixelBtnId, setPixelBtnId] = useState()
-  const [openedAppOrder, setOpenedAppOrder] = useState([])
+  const [isFilesOpened, setIsFilesOpened] = useState();
+  const [isMailOpened, setIsMailOpened] = useState();
+  const [isSettingsOpened, setIsSettingsOpened] = useState();
+  const [isGamesOpened, setIsGamesOpened] = useState();
+  const [filesBtnId, setFilesBtnId] = useState();
+  const [mailBtnId, setMailBtnId] = useState();
+  const [settingsBtnId, setSettingsBtnId] = useState();
+  const [gamesBtnId, setGamesBtnId] = useState();
+  const [pixelBtnId, setPixelBtnId] = useState();
+  const [openedAppOrder, setOpenedAppOrder] = useState([]);
   const [isClicked, setIsClicked] = useState(false);
-  const [minimizedApps, setMinimizedApps] = useState([])
-  const [navPanelTransparency, setNavPanelTransparency] = useState(100)
-  const [primaryColor, setPrimaryColor] = useState('')
+  const [minimizedApps, setMinimizedApps] = useState([]);
+  const [navPanelTransparency, setNavPanelTransparency] = useState(100);
+  const [primaryColor, setPrimaryColor] = useState('#1d1f22');
+  const [isRounded, setIsRounded] = useState(true);
 
   const openAppContextValue = {
     isFilesOpened, setIsFilesOpened,
@@ -46,7 +47,8 @@ const App = () => {
       <OpenAppContext.Provider value={openAppContextValue}>
         <DateContext.Provider value={{ isDateVisible, setIsDateVisible }}>
           <MinimizedAppContext.Provider value={{ minimizedApps, setMinimizedApps }}>
-            <StyleContext.Provider value={{navPanelTransparency, setNavPanelTransparency, primaryColor, setPrimaryColor}}>
+            <StyleContext.Provider 
+            value={{navPanelTransparency, setNavPanelTransparency, primaryColor, setPrimaryColor, isRounded, setIsRounded}}>
               <NavigationPanel />
               <OpenedAppList />
             </StyleContext.Provider>

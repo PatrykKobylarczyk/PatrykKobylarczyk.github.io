@@ -8,12 +8,12 @@ import { StyleContext } from '../context/StyleContext';
 
 const NavigationPanel = () => {
 
-    const { navPanelTransparency } = useContext(StyleContext)
+    const { navPanelTransparency, isRounded } = useContext(StyleContext)
 
     const NavPanelStyle = {backgroundImage :`linear-gradient(145deg, rgba(49, 53, 58, ${navPanelTransparency/100}) 30%, rgba(30, 33, 39, ${navPanelTransparency/100}) 100%)`}
 
     return (
-        <div className='navigation-panel' style={NavPanelStyle}>
+        <div className= {`navigation-panel ${isRounded ? 'roundedX2' : null}`} style={NavPanelStyle}>
             <AppPanel />
             <Date />
         </div>

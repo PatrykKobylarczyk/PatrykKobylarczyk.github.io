@@ -10,14 +10,14 @@ const MailWindow = (props) => {
 
     const { fullScreenWindows } = useContext(FullScreenContext)
     const nodeRef = useRef(null);
-    const { primaryColor } = useContext(StyleContext)
+    const { primaryColor, isRounded } = useContext(StyleContext)
 
     const borderPrimaryColor = { border: `1px solid ${primaryColor}`}
 
     return (
         <Draggable handle='.tabsPanel' nodeRef={nodeRef}>
             <div 
-            className={`basicAppWindow ${fullScreenWindows.includes(props.id) ? 'fullScreen' : null}`} 
+            className={`basicAppWindow ${fullScreenWindows.includes(props.id) ? 'fullScreen' : null} ${isRounded ? 'rounded' : null}`} 
             ref={nodeRef}
             style={primaryColor ? borderPrimaryColor : null}
             >

@@ -1,0 +1,15 @@
+.toggleDate {
+  width: 70px;
+  height: 70px;
+  background: #015858;
+  border-radius: 50%;
+  font-family: Montserrat;
+  font-weight: 500;
+  font-size: .7rem;
+  color: white;
+}
+
+.toggleDate:hover {
+  cursor: pointer;
+}
+/*# sourceMappingURL=ButtonToggleDate.css.map */

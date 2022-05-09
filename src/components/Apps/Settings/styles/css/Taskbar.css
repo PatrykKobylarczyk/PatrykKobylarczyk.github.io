@@ -1,0 +1,12 @@
+.transparency {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.transparency label {
+  font-family: Montserrat;
+  font-size: 18px;
+  font-weight: 400;
+}
+/*# sourceMappingURL=Taskbar.css.map */

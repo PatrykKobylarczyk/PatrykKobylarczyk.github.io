@@ -1,0 +1,42 @@
+.shapesContent {
+  width: 100%;
+  height: auto;
+  padding: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.shapesContent button {
+  color: white;
+}
+
+.shapes {
+  width: 150px;
+  height: 80px;
+  border: 1px solid white;
+  transition: all .1s ease-in;
+}
+
+.shapes h2 {
+  font-size: 18px;
+  font-family: Montserrat;
+  font-weight: 400;
+}
+
+.shapes:hover {
+  cursor: pointer;
+  filter: brightness(1.4);
+  transform: scale(1.01) translateY(-5px);
+  box-shadow: 0px 2px 15px 0px rgba(0, 0, 0, 0.2);
+}
+
+.shapesRounded, .shapesSquare {
+  display: grid;
+  place-items: center;
+}
+
+.shapesRounded {
+  border-radius: 15px;
+}
+/*# sourceMappingURL=Shapes.css.map */
