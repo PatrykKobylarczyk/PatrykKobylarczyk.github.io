@@ -1,7 +1,3 @@
-:root{
-  
-}
-
 html{
   overflow: hidden;
 }
@@ -43,5 +39,16 @@ button{
   border-radius: 10px 10px 0 0;
 }
 
+.lightmode{
+  background: rgb(228, 224, 224);
+  background-image: linear-gradient(145deg, rgb(245, 248, 250) 20%, rgb(214, 210, 203) 100% );
+  background-image: linear-gradient(145deg, rgb(215, 221, 224) 20%, rgb(194, 189, 181) 100% );
+  color: black
+}
 
-
+.darker1{
+  filter: brightness(85%);
+}
+.darker2{
+  filter: brightness(70%);
+}

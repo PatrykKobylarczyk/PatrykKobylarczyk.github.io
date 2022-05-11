@@ -21,6 +21,7 @@
 
 .buttonSettings:hover {
     background: linear-gradient(120deg, rgb(58, 61, 63), rgb(37, 37, 39));
+    // filter: brightness(140%);
     transform: translateY(-5px) scale(1.15);
     cursor: pointer;
 }
@@ -51,3 +52,16 @@ li{
 .btnMinimized{
     background: linear-gradient(95deg, rgb(43, 245, 3), rgb(33, 190, 2));
 }
+
+.lightmode{
+    background: rgb(228, 224, 224);
+    background-image: linear-gradient(145deg, rgb(245, 248, 250) 20%, rgb(214, 210, 203) 100% );
+    color: black
+  }
+  
+  .darker1{
+    filter: brightness(85%);
+  }
+  .darker2{
+    filter: brightness(70%);
+  }

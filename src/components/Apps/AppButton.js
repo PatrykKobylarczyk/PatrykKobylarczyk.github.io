@@ -85,7 +85,11 @@ const AppButton = (props) => {
                 onClick={() => openAppHandler(props.id)}
             >{props.icon}
                 <IconContext.Provider value={{ size: 5, color: 'white' }}>
-                    <div className={`buttonIsActive ${arrayIncludesApp && 'btnOn'} ${arrayIncludesMinimizedApps ? 'btnMinimized' : ''} `}>
+                    <div className={
+                        `buttonIsActive ${arrayIncludesApp && 'btnOn'} 
+                        ${arrayIncludesMinimizedApps ? 'btnMinimized' : ''} `
+                    }
+                    >
                         {arrayIncludesApp ? <FaCheck /> : arrayIncludesMinimizedApps ? <FaRegWindowMinimize /> : null}
                     </div>
                 </IconContext.Provider>

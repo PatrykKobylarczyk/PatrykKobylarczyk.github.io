@@ -10,6 +10,9 @@ export const StyleContext = createContext({
     setPrimaryColor: () => { },
 
     isRounded: '',
-    setIsRounded: () => { }
+    setIsRounded: () => { },
+
+    lightmode: '',
+    setLightmode: () => { }
 });
 

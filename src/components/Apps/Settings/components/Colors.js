@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useContext } from 'react';
 
 import { MdOutlineDarkMode } from 'react-icons/md';
 import { MdOutlineLightMode } from 'react-icons/md';
@@ -11,11 +11,10 @@ import TopPanel from './TopPanel';
 
 const Colors = (props) => {
 
-    const [isDarkMode, setIsDarkMode] = useState(false);
-    const { primaryColor, setPrimaryColor } = useContext(StyleContext);
+    const { primaryColor, setPrimaryColor, lightmode, setLightmode } = useContext(StyleContext);
 
     const modeHandler = () => {
-        setIsDarkMode(prev => !prev)
+        setLightmode(prev => !prev)
     }
 
     const changeColorHandler = (color) => {
@@ -37,11 +36,11 @@ const Colors = (props) => {
                     <div className="switchAndIcon">
                         <div className="switch-div" onChange={modeHandler}>
                             <label className="switch">
-                                <input type='checkbox' defaultChecked={isDarkMode} className="checkbox"></input>
+                                <input type='checkbox' defaultChecked={lightmode} className="checkbox"></input>
                                 <div className="switch-btn"></div>
                             </label>
                         </div>
-                        {isDarkMode ? <MdOutlineLightMode /> : <MdOutlineDarkMode />}
+                        {lightmode ? <MdOutlineLightMode /> : <MdOutlineDarkMode />}
                     </div>
                 </div>
                 <div className='colorsPanel'>

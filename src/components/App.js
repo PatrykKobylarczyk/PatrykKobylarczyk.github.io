@@ -27,6 +27,7 @@ const App = () => {
   const [navPanelTransparency, setNavPanelTransparency] = useState(100);
   const [primaryColor, setPrimaryColor] = useState('#1d1f22');
   const [isRounded, setIsRounded] = useState(true);
+  const [lightmode, setLightmode] = useState(false);
 
   const openAppContextValue = {
     isFilesOpened, setIsFilesOpened,
@@ -43,12 +44,12 @@ const App = () => {
   }
 
   return (
-    <div className="App">
+    <div className={`App ${lightmode ? 'lightmode' : null}`}>
       <OpenAppContext.Provider value={openAppContextValue}>
         <DateContext.Provider value={{ isDateVisible, setIsDateVisible }}>
           <MinimizedAppContext.Provider value={{ minimizedApps, setMinimizedApps }}>
             <StyleContext.Provider 
-            value={{navPanelTransparency, setNavPanelTransparency, primaryColor, setPrimaryColor, isRounded, setIsRounded}}>
+            value={{navPanelTransparency, setNavPanelTransparency, primaryColor, setPrimaryColor, isRounded, setIsRounded, lightmode, setLightmode}}>
               <NavigationPanel />
               <OpenedAppList />
             </StyleContext.Provider>
