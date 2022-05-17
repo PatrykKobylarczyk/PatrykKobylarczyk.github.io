@@ -8,6 +8,7 @@ import MailWindow from '../AppsWindows/MailWindow';
 import SettingsWindow from '../AppsWindows/SettingsWindow';
 import GamesWindow from '../AppsWindows/GamesWindow';
 import PixelArt from '../AppsWindows/PixelArt';
+import Weather from '../AppsWindows/Weather';
 
 const OpenedAppList = () => {
 
@@ -17,6 +18,7 @@ const OpenedAppList = () => {
         settingsBtnId,
         gamesBtnId,
         pixelBtnId,
+        weatherBtnId,
         openedAppOrder
     } = useContext(OpenAppContext)
 
@@ -42,6 +44,10 @@ const OpenedAppList = () => {
         {
             component: <PixelArt id={pixelBtnId} />,
             id: pixelBtnId
+        },
+        {
+            component: <Weather id={weatherBtnId} />,
+            id: weatherBtnId
         }
 
     ];
@@ -55,6 +61,9 @@ const OpenedAppList = () => {
             className={fullScreenWindows.includes(app) ? 'window_active' : openedAppTranslation[index]}
         >{appList[app - 1].component}
         </li>)
+
+
+    console.log(openedAppList);
 
     return (
         <FullScreenContext.Provider value={{ fullScreenWindows, setFullScreenWindows }}>

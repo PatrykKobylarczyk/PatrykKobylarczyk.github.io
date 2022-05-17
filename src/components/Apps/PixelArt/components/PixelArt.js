@@ -1,3 +1,5 @@
+import React from 'react';
+
 import '../styles/PixelArt.scss';
 
 import Editor from './Editor';

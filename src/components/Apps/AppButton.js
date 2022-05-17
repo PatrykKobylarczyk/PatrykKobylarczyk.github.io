@@ -20,6 +20,7 @@ const AppButton = (props) => {
         setSettingsBtnId,
         setGamesBtnId,
         setPixelBtnId,
+        setWeatherBtnId,
         openedAppOrder, setOpenedAppOrder,
     } = useContext(OpenAppContext);
 
@@ -44,8 +45,12 @@ const AppButton = (props) => {
             case 5:
                 setPixelBtnId(id)
                 break;
+            case 6:
+                setWeatherBtnId(id)
+                break;
             default:
                 console.log('Ups');
+
         }
 
         setOpenedAppOrder(
@@ -59,6 +64,7 @@ const AppButton = (props) => {
             const removeMinimizedApp = prev.filter(app => app !== id)
             return removeMinimizedApp
         })
+
     }
 
     const enterCurrentAppHandler = (id) => {
@@ -72,8 +78,6 @@ const AppButton = (props) => {
 
     const arrayIncludesApp = openedAppOrder.includes(props.id)
     const arrayIncludesMinimizedApps = minimizedApps.includes(props.id)
-
-
 
     return (
         <li>

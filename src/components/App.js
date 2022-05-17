@@ -21,6 +21,7 @@ const App = () => {
   const [settingsBtnId, setSettingsBtnId] = useState();
   const [gamesBtnId, setGamesBtnId] = useState();
   const [pixelBtnId, setPixelBtnId] = useState();
+  const [weatherBtnId, setWeatherBtnId] = useState();
   const [openedAppOrder, setOpenedAppOrder] = useState([]);
   const [isClicked, setIsClicked] = useState(false);
   const [minimizedApps, setMinimizedApps] = useState([]);
@@ -39,6 +40,7 @@ const App = () => {
     isGamesOpened, setIsGamesOpened,
     gamesBtnId, setGamesBtnId,
     pixelBtnId, setPixelBtnId,
+    weatherBtnId, setWeatherBtnId,
     openedAppOrder, setOpenedAppOrder,
     isClicked, setIsClicked
   }
