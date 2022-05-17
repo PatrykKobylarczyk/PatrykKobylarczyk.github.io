@@ -1,13 +1,19 @@
 {
   "files": {
-    "main.css": "/static/css/main.e62b6472.css",
-    "main.js": "/static/js/main.3a72e57b.js",
+    "main.css": "/static/css/main.86fdef16.css",
+    "main.js": "/static/js/main.b0757353.js",
+    "static/media/main-bg.png": "/static/media/main-bg.0a607a73b7f2319f2894.png",
+    "static/media/weathericons-regular-webfont.svg": "/static/media/weathericons-regular-webfont.1341a15172cec8dae06e.svg",
+    "static/media/weathericons-regular-webfont.eot": "/static/media/weathericons-regular-webfont.bb2ec001c20cf752f852.eot",
+    "static/media/weathericons-regular-webfont.ttf": "/static/media/weathericons-regular-webfont.0942d1e1c447d6ce3ffc.ttf",
+    "static/media/weathericons-regular-webfont.woff": "/static/media/weathericons-regular-webfont.371511ddba5fdac0538c.woff",
+    "static/media/weathericons-regular-webfont.woff2": "/static/media/weathericons-regular-webfont.e218aee6928fe3da9ed6.woff2",
     "index.html": "/index.html",
-    "main.e62b6472.css.map": "/static/css/main.e62b6472.css.map",
-    "main.3a72e57b.js.map": "/static/js/main.3a72e57b.js.map"
+    "main.86fdef16.css.map": "/static/css/main.86fdef16.css.map",
+    "main.b0757353.js.map": "/static/js/main.b0757353.js.map"
   },
   "entrypoints": [
-    "static/css/main.e62b6472.css",
-    "static/js/main.3a72e57b.js"
+    "static/css/main.86fdef16.css",
+    "static/js/main.b0757353.js"
   ]
 }
