@@ -38,7 +38,7 @@
     }
 }
 
-.firstWindow, .secondWindow, .thirdWindow, .fourthWindow, .fifthWindow, .window_active{
+.firstWindow, .secondWindow, .thirdWindow, .fourthWindow, .fifthWindow, .sixWindow, .window_active{
     position: absolute;
     top: 43%;
     left: 50%;
@@ -66,6 +66,10 @@
 
 .fifthWindow{
     transform: translate(-66%,-38%);
+}
+
+.sixWindow{
+    transform: translate(-70%,-35%);
 }
 
 .fullScreen{

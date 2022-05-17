@@ -22,10 +22,10 @@ const Shapes = (props) => {
         <div className='basicSettings'>
             <TopPanel name={props.name} icon={props.icon} />
             <div className="shapesContent">
-                <button className="shapes shapesRounded" onClick={roundedShapeHandler} style={isRounded ? {border : `1px solid ${primaryColor}` } : null}>
+                <button className="shapes shapesRounded" onClick={roundedShapeHandler} style={!isRounded ? {border : `1px solid ${primaryColor}` } : null}>
                     <h2>rounded</h2>
                 </button>
-                <button className="shapes shapesSquare" onClick={squareShapeHandler} style={!isRounded ? {border : `1px solid ${primaryColor}` } : null}>
+                <button className="shapes shapesSquare" onClick={squareShapeHandler} style={isRounded ? {border : `1px solid ${primaryColor}` } : null}>
                     <h2>square</h2>
                 </button>
             </div>

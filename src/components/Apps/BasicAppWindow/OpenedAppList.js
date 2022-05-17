@@ -53,7 +53,7 @@ const OpenedAppList = () => {
     ];
 
     //create app windows with translation - add class with transition: translate(x,y)
-    const openedAppTranslation = ['firstWindow', 'secondWindow', 'thirdWindow', 'fourthWindow', 'fifthWindow']
+    const openedAppTranslation = ['firstWindow', 'secondWindow', 'thirdWindow', 'fourthWindow', 'fifthWindow', 'sixWindow']
 
     const openedAppList = openedAppOrder.map((app, index) =>
         <li
@@ -63,7 +63,7 @@ const OpenedAppList = () => {
         </li>)
 
 
-    console.log(openedAppList);
+    console.log(fullScreenWindows);
 
     return (
         <FullScreenContext.Provider value={{ fullScreenWindows, setFullScreenWindows }}>

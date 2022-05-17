@@ -23,8 +23,8 @@ const Weather = (props) => {
             style={primaryColor ? borderPrimaryColor : null}
             >
                 <TabsPanel id={props.id} />
-                {/* <WeatherApp/> */}\
-                <h1>Weather</h1>
+                <WeatherApp/>
+                {/* <h1>Weather</h1> */}
             </div>
         </Draggable>
     );

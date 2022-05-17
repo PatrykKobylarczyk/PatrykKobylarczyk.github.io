@@ -1,16 +1,17 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 
 import '../styles/weatherApp.scss';
+import '../styles/weather-icons.min.css'
 
 import Input from './Input';
 import Current from './Current';
 import Forecast from './Forecast';
 
 import Axios from 'axios'
+import { FullScreenContext } from '../../../../context/FullScreenContext';
 
 
-
-function WeatherApp() {
+const WeatherApp = () => {
 
   const entryData = {
     coord: {
@@ -22,6 +23,7 @@ function WeatherApp() {
   const [city, setCity] = useState()
   const [data, setData] = useState(entryData)
   const [forecast, setForecast] = useState()
+  const { fullScreenWindows } = useContext(FullScreenContext)
 
   const getCity = e => {
     setCity(e.target.value)
@@ -30,13 +32,7 @@ function WeatherApp() {
   const getCurrentData = (city) => {
     Axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=e3bbcd38209e98c3c295a84414b911b1&units=metric`)
       .then(response => {
-        // document.querySelectorAll('.hide').forEach((section) => {
-        //   section.style.opacity = '0';
-        // })
-        // // handle success
-        // setTimeout(() => {
           setData(response.data)
-        // }, 400)
 
         document.querySelector('.error-msg').textContent = '';
         document.querySelector('.input-wrap input').value = '';
@@ -89,11 +85,10 @@ function WeatherApp() {
   }, [data.coord.lat, data.coord.lon])
 
   return (
-    <div className="weatherApp">
-      <div className="bgImage"></div>
+    <div className={`weatherApp ${fullScreenWindows.includes(6) && 'weatherFullScreen'}`}>
       <Input cityName={getCity} checkForm={submitCity} />
-      {city === '' ? <Current currentData={data} /> : null}
-      {city === '' ? <Forecast forecastData={forecast} /> : null}
+      {data && city === '' ? <Current currentData={data} /> : null}
+      {data && city === '' ? <Forecast forecastData={forecast} /> : null}
     </div>
   );
 }
