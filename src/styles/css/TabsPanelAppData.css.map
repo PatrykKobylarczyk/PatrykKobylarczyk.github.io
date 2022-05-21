@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,iBAAiB,CAAC;EACd,MAAM,EAAE,IAAI;EACZ,OAAO,EAAE,IAAI;EACb,WAAW,EAAE,MAAM;CACtB;;AAED,AAAA,iBAAiB,CAAC,IAAI,CAAA;EAClB,MAAM,EAAE,aAAa;CACxB;;AACD,AAAA,iBAAiB,CAAC,CAAC,CAAA;EACf,WAAW,EAAE,UAAU;EACvB,SAAS,EAAE,KAAK;EAChB,WAAW,EAAE,GAAG;CACnB",
+    "sources": [
+        "../TabsPanelAppData.scss"
+    ],
+    "names": [],
+    "file": "TabsPanelAppData.css"
+}

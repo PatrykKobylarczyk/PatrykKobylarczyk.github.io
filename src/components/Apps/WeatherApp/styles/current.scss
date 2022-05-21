@@ -87,3 +87,45 @@
     font-weight: 100;
     margin-bottom: 8px;
 }
+
+@media only screen and (min-width: 1600px) {
+    .city {
+        padding-left: 30px;
+        
+        h2{
+            font-size: 4rem;
+            margin-top: 3rem;
+        }
+
+        p{
+            font-size: 2rem;
+        }
+    }
+    
+
+    .current-temp {    
+        h2 {
+            font-size: 5rem;
+            margin: 0;
+        }
+    
+        p {
+            position: absolute;
+            font-weight: 300;
+            font-size: 3rem;
+            text-align: left;
+            margin: 0;
+        }
+    }
+
+    .current-others{
+        margin-top: 2rem;
+    }
+    .current-others>*>h3 {
+        font-size: 2rem;
+        margin-top: 10px;
+    }
+    .current-others>*>p {
+        font-size: 1.5rem;
+    }
+  }

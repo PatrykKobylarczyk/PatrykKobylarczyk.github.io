@@ -1,0 +1,9 @@
+.pixel {
+  width: 1rem;
+  height: 1rem;
+}
+
+.pixel:hover {
+  cursor: pointer;
+}
+/*# sourceMappingURL=pixel.css.map */

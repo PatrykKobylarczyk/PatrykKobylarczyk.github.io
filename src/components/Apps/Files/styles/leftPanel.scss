@@ -1,0 +1,31 @@
+.leftPanel{
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+.folder-main-data{
+    display: flex;
+    align-items: center;
+    cursor: default;
+    user-select: none;
+
+    h2{
+        font-size: 1rem;
+        margin: 0 0 .1rem .5rem;
+    }
+
+    &:active{
+        pointer-events: none;
+    }
+
+    &:hover{
+        filter: brightness(.8);
+    }
+}
+
+
+.subfolder{
+    margin-left: 2rem;
+}

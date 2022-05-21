@@ -1,0 +1,34 @@
+.currentDate {
+  width: 10rem;
+}
+
+.currentDate-clock,
+.currentDate-date,
+.currentDate-clock__dateHide {
+  font-family: Montserrat;
+  font-weight: 600;
+}
+
+.currentDate-clock {
+  font-size: 2rem;
+}
+
+.currentDate-clock__dateHide {
+  font-size: 2.5rem;
+}
+
+.currentDate-date {
+  font-size: .75rem;
+  font-weight: 500;
+}
+
+/* @keyframes bigClock {
+    from {
+        font-size: 2rem;
+    }
+
+    to {
+        font-size: 2.5rem;
+    }
+} */
+/*# sourceMappingURL=Date.css.map */

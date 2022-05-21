@@ -1,10 +1,13 @@
 import React, { useContext, useRef } from 'react';
 
 import '../../../styles/BasicAppWindow.scss'
+import '../../Apps/Files/styles/files.scss'
 import { FullScreenContext } from '../../../context/FullScreenContext';
 import { StyleContext } from '../../../context/StyleContext';
 import TabsPanel from '../BasicAppWindow/TabsPanel';
 import Draggable from 'react-draggable'
+import LeftPanel from '../Files/components/LeftPanel';
+import RightPanel from '../Files/components/RightPanel';
 
 
 const FilesWindow = (props) => {
@@ -22,7 +25,10 @@ const FilesWindow = (props) => {
             style={primaryColor ? borderPrimaryColor : null}
             >
                 <TabsPanel id={props.id} />
-                <h1>Files window</h1>
+                <div className="filesApp">
+                    <LeftPanel/>
+                    <RightPanel/>
+                </div>
             </div>
         </Draggable>
     );

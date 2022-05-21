@@ -1,0 +1,31 @@
+.leftPanel {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  color: white;
+}
+
+.folder-main-data {
+  display: flex;
+  align-items: center;
+  cursor: default;
+  user-select: none;
+}
+
+.folder-main-data h2 {
+  font-size: 1rem;
+  margin: 0 0 .1rem .5rem;
+}
+
+.folder-main-data:active {
+  pointer-events: none;
+}
+
+.folder-main-data:hover {
+  filter: brightness(0.8);
+}
+
+.subfolder {
+  margin-left: 2rem;
+}
+/*# sourceMappingURL=leftPanel.css.map */

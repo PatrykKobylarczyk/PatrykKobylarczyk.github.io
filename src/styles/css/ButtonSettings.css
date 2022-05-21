@@ -1,0 +1,62 @@
+.buttonSettings {
+  height: 45px;
+  width: 45px;
+  border-radius: 10px;
+  margin: 6px;
+  border: none;
+  position: relative;
+  box-shadow: inset 0 -2px 2px 1px rgba(0, 0, 0, 0.3);
+  box-shadow: 4px 4px 4px 0 rgba(0, 0, 0, 0.5);
+  display: grid;
+  place-items: center;
+  transition: all .15s ease-in;
+  background: linear-gradient(95deg, #2f3133, #242527);
+  opacity: 1;
+}
+
+.buttonSettings:hover {
+  background: linear-gradient(120deg, #3a3d3f, #252527);
+  transform: translateY(-5px) scale(1.15);
+  cursor: pointer;
+}
+
+li {
+  list-style: none;
+}
+
+.buttonIsActive {
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  background: #1f2020;
+  box-shadow: inset -1px -1px 1px 0 rgba(0, 0, 0, 0.7);
+  box-shadow: inset 0.5px 0.5px 0.5px 0 rgba(255, 255, 255, 0.2);
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  display: grid;
+  place-items: center;
+}
+
+.btnOn {
+  background: linear-gradient(95deg, #e70a35, #a81633);
+}
+
+.btnMinimized {
+  background: linear-gradient(95deg, #2bf503, #21be02);
+}
+
+.lightmode {
+  background: #e4e0e0;
+  background-image: linear-gradient(145deg, #f5f8fa 20%, #d6d2cb 100%);
+  color: black;
+}
+
+.darker1 {
+  filter: brightness(85%);
+}
+
+.darker2 {
+  filter: brightness(70%);
+}
+/*# sourceMappingURL=ButtonSettings.css.map */

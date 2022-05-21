@@ -62,9 +62,6 @@ const OpenedAppList = () => {
         >{appList[app - 1].component}
         </li>)
 
-
-    console.log(fullScreenWindows);
-
     return (
         <FullScreenContext.Provider value={{ fullScreenWindows, setFullScreenWindows }}>
             <ul>
