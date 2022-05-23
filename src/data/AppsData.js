@@ -11,40 +11,34 @@ import { TiWeatherPartlySunny } from 'react-icons/ti'
 export const AppsData = [
 
     {
-        "id": 1,
-        "name": "Files",
-        "icon": <AiOutlineFolderOpen />,
-        "iconColor": '',
+        id: 1,
+        name: "Files",
+        icon: <AiOutlineFolderOpen />
     },
     {
-        "id": 2,
-        "name": "Mail",
-        "icon": <BiMailSend />,
-        "iconColor": ''
+        id: 2,
+        name: "Mail",
+        icon: <BiMailSend />
     },
     {
-        "id": 3,
-        "name": "Settings",
-        "icon": <FiSettings />,
-        "iconColor": ''
+        id: 3,
+        name: "Settings",
+        icon: <FiSettings />
     },
     {
-        "id": 4,
-        "name": "Games",
-        "icon": <RiGamepadLine />,
-        "iconColor": ''
+        id: 4,
+        name: "Games",
+        icon: <RiGamepadLine />
     },
     {
-        "id": 5,
-        "name": "PixelArt",
-        "icon": <MdOutlineDraw />,
-        "iconColor": ''
+        id: 5,
+        name: "PixelArt",
+        icon: <MdOutlineDraw />
     },
     {
-        "id": 6,
-        "name": "WeatherApp",
-        "icon": <TiWeatherPartlySunny />,
-        "iconColor": ''
+        id: 6,
+        name: "WeatherApp",
+        icon: <TiWeatherPartlySunny />
     }
 
 ]

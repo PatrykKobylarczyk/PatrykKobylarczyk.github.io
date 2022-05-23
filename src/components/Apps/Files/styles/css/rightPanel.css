@@ -3,4 +3,21 @@
   display: flex;
   color: white;
 }
+
+.filesRightPanel {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.directory {
+  display: flex;
+  flex-direction: column;
+  width: 95px;
+  height: 80px;
+}
+
+.directory h2 {
+  margin: 0;
+}
 /*# sourceMappingURL=rightPanel.css.map */

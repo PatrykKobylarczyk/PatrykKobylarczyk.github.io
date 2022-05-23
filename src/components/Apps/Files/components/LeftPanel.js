@@ -3,70 +3,49 @@ import React, { useState } from 'react';
 import '../styles/files.scss'
 import '../styles/leftPanel.scss'
 
-import { AiOutlineFolderOpen, AiOutlineFolder } from 'react-icons/ai'
-
 import { IconContext } from "react-icons";
-
 import { directoriesTree } from './directoriesTree.js'
 import MainFolders from './MainFolders';
+import Subfolder from './Subfolder';
+import AppFile from './AppFile';
 
-const LeftPanel = () => {
-
-    const [isFolderClicked, setIsFolderClicked] = useState(false)
-    const [isSubfolderClicked, setIsSubfolderClicked] = useState([])
-
-    const openFolderHandler = () => {
-        setIsFolderClicked(prev => !prev)
-    }
-    const openSubfolderHandler = (name) => {
-        switch (name) {
-            // fall trought in switch
-
-            case 'portfolio':
-            case 'skills':
-            case 'education':
-            case 'experience':
-                setIsSubfolderClicked(prev => {
-                    if (prev.includes(name)) {
-                        const removeName = isSubfolderClicked.filter(folder => folder !== name)
-                        return removeName
-                    } else {
-                        return [...prev, name]
-                    }
-                })
-                break;
-            default:
-                console.log('Oops');
-        }
-    }
+const LeftPanel = (props) => {
 
     const mainFolder = directoriesTree.map(item => {
         return (
-            <div
+            <MainFolders
                 key={item.name}
-                className="folder-main"
-                onDoubleClick={openFolderHandler}
-            >
-                <div className="folder-main-data" >
-                    <span>{isFolderClicked ? <AiOutlineFolderOpen /> : <AiOutlineFolder />}</span>
-                    <h2>{item.name}</h2>
-                </div>
-            </div>
+                name={item.name}
+                openFolderHandler={props.openFolderHandler}
+                isFolderClicked={props.isFolderClicked}
+            />
         )
     })
 
-    const subfolders = directoriesTree[0].children.map(item => {
+    //read about tree traversal
+    const subfolders = directoriesTree[0].children.map((item) => {
+
+        const appFiles = item.children.map(file => {
+            return (
+                <AppFile
+                    key={file.name}
+                    name={file.name}
+                    class='filesLeftPanel'
+                />
+            )
+        })
+
         return (
-            <div
-                key={item.name}
-                className="subfolder"
-                onDoubleClick={() => openSubfolderHandler(item.name)}
-            >
-                <div className="folder-main-data" >
-                    <span>{isSubfolderClicked.includes(item.name) ? <AiOutlineFolderOpen /> : <AiOutlineFolder />}</span>
-                    <h2>{item.name}</h2>
-                </div>
-            </div>
+            <>
+                <Subfolder
+                    key={item.name}
+                    name={item.name}
+                    openSubfolderHandler={props.openSubfolderHandler}
+                    isSubfolderClicked={props.isSubfolderClicked}
+                    class={'foldersLeftPanel'}
+                />
+                {props.isSubfolderClicked.includes(item.name) && appFiles}
+            </>
         )
     })
 
@@ -74,7 +53,7 @@ const LeftPanel = () => {
         <IconContext.Provider value={{ size: 25, color: 'white' }}>
             <div className="leftPanel">
                 {mainFolder}
-                {isFolderClicked && subfolders}
+                {props.isFolderClicked && subfolders}
             </div>
         </IconContext.Provider>
     );

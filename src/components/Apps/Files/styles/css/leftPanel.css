@@ -1,8 +1,10 @@
 .leftPanel {
-  padding: 1.5rem;
+  flex-basis: fit-content(35%);
   display: flex;
   flex-direction: column;
+  padding: 1.5rem;
   color: white;
+  overflow-y: auto;
 }
 
 .folder-main-data {
@@ -26,6 +28,14 @@
 }
 
 .subfolder {
-  margin-left: 2rem;
+  margin-left: .5rem;
+}
+
+.app-file {
+  margin-left: 4rem;
+}
+
+.foldersLeftPanel {
+  margin-left: .5rem;
 }
 /*# sourceMappingURL=leftPanel.css.map */

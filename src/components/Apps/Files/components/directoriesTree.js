@@ -10,7 +10,7 @@ export const directoriesTree = [
     {
         path: 'main',
         name: 'main',
-        type: 'directory',
+        type: 'main',
         extension: 'not applicable',
         children: [
             {
@@ -124,11 +124,11 @@ export const directoriesTree = [
                 extension: 'not applicable',
                 children: [
                     {
-                        path: 'main/education/zse.png',
-                        name: 'Zespół Szkół Elektrycznych',
+                        path: 'main/education/amuz.png',
+                        name: 'Akademia Muzyczna',
                         type: 'file',
                         extension: '.png',
-                        icon: 'zse',
+                        icon: 'amuz',
                         component: <Education />,
                         data: {
                             yearsFrom: 2016,
@@ -145,27 +145,27 @@ export const directoriesTree = [
                 extension: 'not applicable',
                 children: [
                     {
-                        path: 'main/experience/clevercode.pdf',
-                        name: 'CleverCode',
+                        path: 'main/experience/waterhouse.pdf',
+                        name: 'WaterHouse',
                         type: 'file',
                         extension: '.pdf',
-                        icon: 'clevercode',
+                        icon: 'waterhouse',
                         component: <Experience />,
                         data: {
                             year: 2019,
-                            field: 'PHP dev',
+                            field: 'Real Estate Agent',
                         },
                     },
                     {
-                        path: 'main/experience/zeto.pdf',
-                        name: 'ZETO S.A.',
+                        path: 'main/experience/zirkelstudio.pdf',
+                        name: 'zirkelstudio',
                         type: 'file',
                         extension: '.pdf',
-                        icon: 'zeto',
+                        icon: 'zirkelstudio',
                         component: <Experience />,
                         data: {
                             year: 2018,
-                            field: 'PC Service',
+                            field: 'Real Estate Photography',
                         },
                     },
                 ],

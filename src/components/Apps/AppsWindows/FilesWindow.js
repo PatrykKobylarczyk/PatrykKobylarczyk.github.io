@@ -1,4 +1,4 @@
-import React, { useContext, useRef } from 'react';
+import React, { useState, useContext, useRef } from 'react';
 
 import '../../../styles/BasicAppWindow.scss'
 import '../../Apps/Files/styles/files.scss'
@@ -16,18 +16,57 @@ const FilesWindow = (props) => {
     const nodeRef = useRef(null);
     const { primaryColor, isRounded } = useContext(StyleContext)
 
-    const borderPrimaryColor = { border: `1px solid ${primaryColor}`}
+    const [isFolderClicked, setIsFolderClicked] = useState(false)
+    const [isSubfolderClicked, setIsSubfolderClicked] = useState([])
+
+    const openFolderHandler = () => {
+        setIsFolderClicked(prev => !prev)
+    }
+
+    const openSubfolderHandler = (name) => {
+        switch (name) {
+            // fall trought in switch
+
+            case 'portfolio':
+            case 'skills':
+            case 'education':
+            case 'experience':
+                setIsSubfolderClicked(prev => {
+                    if (prev.includes(name)) {
+                        const removeName = isSubfolderClicked.filter(folder => folder !== name)
+                        return removeName
+                    } else {
+                        return [...prev, name]
+                    }
+                })
+                break;
+            default:
+                console.log('Oops');
+        }
+    }
+
+    const borderPrimaryColor = { border: `1px solid ${primaryColor}` }
     return (
         <Draggable handle='.tabsPanel' nodeRef={nodeRef}>
-            <div 
-            className={`basicAppWindow ${fullScreenWindows.includes(props.id) ? 'fullScreen' : null} ${isRounded ? 'rounded' : null}`} 
-            ref={nodeRef}
-            style={primaryColor ? borderPrimaryColor : null}
+            <div
+                className={`basicAppWindow ${fullScreenWindows.includes(props.id) ? 'fullScreen' : null} ${isRounded ? 'rounded' : null}`}
+                ref={nodeRef}
+                style={primaryColor ? borderPrimaryColor : null}
             >
                 <TabsPanel id={props.id} />
                 <div className="filesApp">
-                    <LeftPanel/>
-                    <RightPanel/>
+                    <LeftPanel
+                        isFolderClicked={isFolderClicked}
+                        isSubfolderClicked={isSubfolderClicked}
+                        openFolderHandler={openFolderHandler}
+                        openSubfolderHandler={openSubfolderHandler}
+                    />
+                    <RightPanel
+                        isFolderClicked={isFolderClicked}
+                        isSubfolderClicked={isSubfolderClicked}
+                        openFolderHandler={openFolderHandler}
+                        openSubfolderHandler={openSubfolderHandler}
+                    />
                 </div>
             </div>
         </Draggable>

@@ -14,10 +14,10 @@
 }
 
 .leftPanel {
-  flex-basis: 35%;
+  flex-basis: fit-content(35%);
 }
 
 .filesContentContainer {
-  flex-basis: fit-content;
+  flex-basis: fit-content(100%);
 }
 /*# sourceMappingURL=files.css.map */
