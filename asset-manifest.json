@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/static/css/main.86fdef16.css",
-    "main.js": "/static/js/main.b0757353.js",
-    "static/media/main-bg.png": "/static/media/main-bg.0a607a73b7f2319f2894.png",
-    "static/media/weathericons-regular-webfont.svg": "/static/media/weathericons-regular-webfont.1341a15172cec8dae06e.svg",
-    "static/media/weathericons-regular-webfont.eot": "/static/media/weathericons-regular-webfont.bb2ec001c20cf752f852.eot",
-    "static/media/weathericons-regular-webfont.ttf": "/static/media/weathericons-regular-webfont.0942d1e1c447d6ce3ffc.ttf",
-    "static/media/weathericons-regular-webfont.woff": "/static/media/weathericons-regular-webfont.371511ddba5fdac0538c.woff",
-    "static/media/weathericons-regular-webfont.woff2": "/static/media/weathericons-regular-webfont.e218aee6928fe3da9ed6.woff2",
-    "index.html": "/index.html",
-    "main.86fdef16.css.map": "/static/css/main.86fdef16.css.map",
-    "main.b0757353.js.map": "/static/js/main.b0757353.js.map"
+    "main.css": "/PatrykKobylarczyk/boss.git/static/css/main.7cd10628.css",
+    "main.js": "/PatrykKobylarczyk/boss.git/static/js/main.c53af9ed.js",
+    "static/media/main-bg.png": "/PatrykKobylarczyk/boss.git/static/media/main-bg.0a607a73b7f2319f2894.png",
+    "static/media/weathericons-regular-webfont.svg": "/PatrykKobylarczyk/boss.git/static/media/weathericons-regular-webfont.1341a15172cec8dae06e.svg",
+    "static/media/weathericons-regular-webfont.eot": "/PatrykKobylarczyk/boss.git/static/media/weathericons-regular-webfont.bb2ec001c20cf752f852.eot",
+    "static/media/weathericons-regular-webfont.ttf": "/PatrykKobylarczyk/boss.git/static/media/weathericons-regular-webfont.0942d1e1c447d6ce3ffc.ttf",
+    "static/media/weathericons-regular-webfont.woff": "/PatrykKobylarczyk/boss.git/static/media/weathericons-regular-webfont.371511ddba5fdac0538c.woff",
+    "static/media/weathericons-regular-webfont.woff2": "/PatrykKobylarczyk/boss.git/static/media/weathericons-regular-webfont.e218aee6928fe3da9ed6.woff2",
+    "index.html": "/PatrykKobylarczyk/boss.git/index.html",
+    "main.7cd10628.css.map": "/PatrykKobylarczyk/boss.git/static/css/main.7cd10628.css.map",
+    "main.c53af9ed.js.map": "/PatrykKobylarczyk/boss.git/static/js/main.c53af9ed.js.map"
   },
   "entrypoints": [
-    "static/css/main.86fdef16.css",
-    "static/js/main.b0757353.js"
+    "static/css/main.7cd10628.css",
+    "static/js/main.c53af9ed.js"
   ]
 }
