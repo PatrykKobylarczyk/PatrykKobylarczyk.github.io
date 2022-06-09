@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import '../styles/files.scss'
 import '../styles/leftPanel.scss'
@@ -33,7 +33,7 @@ const LeftPanel = (props) => {
                     class='filesLeftPanel'
                 />
             )
-        })
+        })       
 
         return (
             <>

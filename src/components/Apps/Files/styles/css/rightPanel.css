@@ -1,7 +1,9 @@
 .rightPanel {
   padding: 1.5rem;
   display: flex;
+  flex-wrap: wrap;
   color: white;
+  flex-basis: fit-content(400px);
 }
 
 .filesRightPanel {

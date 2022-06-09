@@ -17,10 +17,12 @@ const FilesWindow = (props) => {
     const { primaryColor, isRounded } = useContext(StyleContext)
 
     const [isFolderClicked, setIsFolderClicked] = useState(false)
+    const [isFMainDisplay, setIsFMainDisplay] = useState(true)
     const [isSubfolderClicked, setIsSubfolderClicked] = useState([])
 
     const openFolderHandler = () => {
         setIsFolderClicked(prev => !prev)
+        setIsFMainDisplay(true)
     }
 
     const openSubfolderHandler = (name) => {
@@ -36,9 +38,10 @@ const FilesWindow = (props) => {
                         const removeName = isSubfolderClicked.filter(folder => folder !== name)
                         return removeName
                     } else {
-                        return [...prev, name]
+                        return [name]
                     }
                 })
+                setIsFMainDisplay(false)
                 break;
             default:
                 console.log('Oops');
@@ -66,6 +69,7 @@ const FilesWindow = (props) => {
                         isSubfolderClicked={isSubfolderClicked}
                         openFolderHandler={openFolderHandler}
                         openSubfolderHandler={openSubfolderHandler}
+                        isFMainDisplay={isFMainDisplay}
                     />
                 </div>
             </div>

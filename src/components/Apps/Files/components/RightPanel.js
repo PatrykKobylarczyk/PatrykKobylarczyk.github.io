@@ -14,40 +14,41 @@ const RightPanel = (props) => {
 
     const subfolders = directoriesTree[0].children.map((item) => {
 
+        const appFiles = item.children.map(file => {
+            return (
+                <AppFile
+                    key={file.path}
+                    name={file.name}
+                    class='filesRightPanel'
+                />
+            )
+        })
 
         return (
             <>
-                <Subfolder
-                    key={item.name}
-                    name={item.name}
-                    openSubfolderHandler={props.openSubfolderHandler}
-                    isSubfolderClicked={props.isSubfolderClicked}
-                    class={item.type}
-                />
+                {props.isMainDisplayed
+                    ? <Subfolder
+                        key={item.path}
+                        name={item.name}
+                        openSubfolderHandler={props.openSubfolderHandler}
+                        isSubfolderClicked={props.isSubfolderClicked}
+                        class={'foldersLeftPanel'}
+                    />
+                    : props.isSubfolderClicked.includes(item.name) && appFiles}
             </>
         )
     })
 
-    // const appFiles = directoriesTree[0].children.children.map(file => {
-    //         return (
-    //             <AppFile
-    //                 key={file.name}
-    //                 name={file.name}
-    //                 class='filesLeftPanel'
-    //             />
-    //         )
-    //     })
-console.log(subfolders.name);
 
-return (
-    <IconContext.Provider value={{ size: 50, color: 'white' }}>
-        <div className="rightPanel">
-            {props.isFolderClicked 
-            ? subfolders 
-            : null}
-        </div>
-    </IconContext.Provider>
-)
+    return (
+        <IconContext.Provider value={{ size: 50, color: 'white' }}>
+            <div className="rightPanel">
+                {props.isFolderClicked
+                    ? subfolders
+                    : null}
+            </div>
+        </IconContext.Provider>
+    )
 }
 
 export default RightPanel;

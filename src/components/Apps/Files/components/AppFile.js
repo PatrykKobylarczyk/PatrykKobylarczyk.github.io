@@ -6,7 +6,6 @@ const AppFile = (props) => {
 
     return (
         <div
-            key={props.name}
             className="app-file"
         >
             <div className='folder-main-data'>
